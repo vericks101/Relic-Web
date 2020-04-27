@@ -1,12 +1,13 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Home } from './components/pages/Home';
-import { About } from './components/pages/About';
-import { Contact } from './components/pages/Contact';
-import { NoMatch } from './components/pages/NoMatch';
-import { Layout } from './components/Layout';
-import { NavigationBar } from './components/ui/NavigationBar';
+import React, { Component } from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { Home } from './components/pages/Home'
+import { About } from './components/pages/About'
+import { Contact } from './components/pages/Contact'
+import { NoMatch } from './components/pages/NoMatch'
+import { Layout } from './components/Layout'
+import JumbotronFooter from './components/ui/JumbotronFooter';
+import { NavigationBar } from './components/ui/NavigationBar'
 
 class App extends Component {
   render() {
@@ -23,6 +24,7 @@ class App extends Component {
             </Switch>
           </Router>
         </Layout>
+        <JumbotronFooter/>
       </React.Fragment>
     );
   }
