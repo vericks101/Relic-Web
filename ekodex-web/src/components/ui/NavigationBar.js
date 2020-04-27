@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import {Nav, Navbar} from 'react-bootstrap';
 import styled from 'styled-components';
 
@@ -20,7 +20,7 @@ const Styles = styled.div`
 export const NavigationBar = () => (
     <Styles>
         <Navbar expand='lg'>
-            <Navbar.Brand href='/'>Nav Bar</Navbar.Brand>
+            <Navbar.Brand href='/'>Ekodex</Navbar.Brand>
             <Navbar.Toggle area-controls='basic-navbar-nav'/>
             <Navbar.Collapse id='basic-navbar-nav'>
                 <Nav className = 'ml-auto'>

@@ -1,8 +1,8 @@
-import React from 'react'
+import React from '../../../node_modules/react'
 
-export const Home = () => (
+export const About = () => (
     <div>
-        <h2>Hello World!</h2>
+        <h2>About Page</h2>
         <p>alkwdlkajwldkjalwdjlakjdwlakjdlkjaldwjalwkdjlakjwdlkajwdlkjaldwkjalkwdjlakjwd;afj;alkwf;ma.fwalwkflakfwlakjf;la.fsnalwkfjlakjfwlkajwflkjalwfkjalwkfjlakjfw</p>
         <p>alkwdlkajwldkjalwdjlakjdwlakjdlkjaldwjalwkdjlakjwdlkajwdlkjaldwkjalkwdjlakjwd;afj;alkwf;ma.fwalwkflakfwlakjf;la.fsnalwkfjlakjfwlkajwflkjalwfkjalwkfjlakjfw</p>
         <p>alkwdlkajwldkjalwdjlakjdwlakjdlkjaldwjalwkdjlakjwdlkajwdlkjaldwkjalkwdjlakjwd;afj;alkwf;ma.fwalwkflakfwlakjf;la.fsnalwkfjlakjfwlkajwflkjalwfkjalwkfjlakjfw</p>
