@@ -1,6 +1,6 @@
-import React from '../../../node_modules/react'
-import CardDeckContainer from '../ui/CardDeckContainer'
-import CarouselSlideContainer from '../ui/CarouselSlideContainer'
+import React from '../../../node_modules/react';
+import CardDeckContainer from '../ui/CardDeckContainer';
+import CarouselSlideContainer from '../ui/CarouselSlideContainer';
 import styled from '../../../node_modules/styled-components';
 
 const Styles = styled.div`

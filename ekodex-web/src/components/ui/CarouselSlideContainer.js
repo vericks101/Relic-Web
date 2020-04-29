@@ -1,6 +1,6 @@
 import React from '../../../node_modules/react';
-import Carousel from '../../../node_modules/react-bootstrap/Carousel'
-import Button from '../../../node_modules/react-bootstrap/Button' 
+import Carousel from '../../../node_modules/react-bootstrap/Carousel';
+import Button from '../../../node_modules/react-bootstrap/Button';
 import styled from '../../../node_modules/styled-components';
 
 const Styles = styled.div`

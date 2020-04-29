@@ -1,6 +1,6 @@
 import React from '../../../node_modules/react';
-import Jumbotron from '../../../node_modules/react-bootstrap/Jumbotron'
-import Button from '../../../node_modules/react-bootstrap/Button' 
+import Jumbotron from '../../../node_modules/react-bootstrap/Jumbotron';
+import Button from '../../../node_modules/react-bootstrap/Button';
 import styled from '../../../node_modules/styled-components';
 
 const Styles = styled.div`
