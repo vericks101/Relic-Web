@@ -1,6 +1,7 @@
 import React from 'react';
 import {Nav, Navbar} from 'react-bootstrap';
 import styled from 'styled-components';
+import SignUpLink from '../ui/SignUpModal';
 
 
 const Styles = styled.div`
@@ -8,7 +9,7 @@ const Styles = styled.div`
         background-color: #222;
     }
 
-    .navbar-brand, .navbar-nav .nav-link {
+    .navbar-brand, .navbar-nav .nav-link, .navbar-light .navbar-nav .nav-link.active {
         color: #bbb;
 
         &:hover {
@@ -27,6 +28,7 @@ export const NavigationBar = () => (
                     <Nav.Item><Nav.Link href='/'>Home</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href='/about'>About</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href='/contact'>Contact</Nav.Link></Nav.Item>
+                    <Nav.Item><SignUpLink/></Nav.Item>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
