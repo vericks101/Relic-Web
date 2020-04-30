@@ -6,8 +6,23 @@ import Col from 'react-bootstrap/Col'
 import InputGroup from 'react-bootstrap/InputGroup'
 import Button from 'react-bootstrap/Button'
 
-function submitValues({ firstName, lastName, username, email, password, confirmPassword }) {
-    console.log({ firstName, lastName, username, email, password, confirmPassword });
+function submitSignUp({ firstName, lastName, username, email, password }) {
+    fetch('http://localhost:3001/api/user/register', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({name: firstName + ' ' + lastName, username: username, email: email, password: password})
+    }).then(function(response) {
+      if (!response.ok)
+          throw Error(response.statusText);
+      return response;
+    }).then(function(response) {
+        console.log("Sign up was Successful!");
+    }).catch(function(error) {
+        console.log(error);
+    });
 };
 
 const alphanumericRegex = '^[a-zA-Z0-9]+$';
@@ -36,14 +51,18 @@ const schema = yup.object({
     .matches(alphanumericRegex, 'May only contain alphanumeric characters. ')
 });
 
-function FormExample() {
+function SignUpForm() {
   return (
     <Formik
       validationSchema={schema}
-      onSubmit={submitValues}
+      onSubmit={submitSignUp}
       initialValues={{
-        firstName: '',
-        lastName: '',
+        firstName: 'Victor',
+        lastName: 'Erickson',
+        username: 'test123',
+        email: 'test123@gmail.com',
+        password: 'test123',
+        confirmPassword: 'test123',
       }}
     >
       {({
@@ -153,4 +172,4 @@ function FormExample() {
   );
 }
 
-export default FormExample;
+export default SignUpForm;
