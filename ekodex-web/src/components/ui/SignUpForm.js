@@ -28,16 +28,21 @@ const submitSignUp = async ({ firstName, lastName, username, email, password }) 
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({name: firstName + ' ' + lastName, username: username, email: email, password: password})
+    }).then(response =>
+      response.json().then(data => ({ 
+          data: data, 
+          status: response.status 
+      })
+    ).then(response => {
+        return response;
     }).then(function(response) {
-      if (!response.ok)
-          throw Error(response.statusText);
-    }).then(function() {
-        console.log("Sign up was Successful!");
+        console.log(response);
+        console.log("Login was Successful! ");
         return true;
-    }).catch(function() {
-        console.log("Sign up was not Successful.");
+    }).catch(function(error) {
+        console.log("Login was not Successful.");
         return false;
-    });
+    }))
 };
 
 const alphanumericRegex = '^[a-zA-Z0-9]+$';
