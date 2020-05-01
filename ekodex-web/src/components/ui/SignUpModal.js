@@ -1,8 +1,8 @@
 import React from '../../../node_modules/react';
 import Button from '../../../node_modules/react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal'
-import FormExample from './SignUpForm'
 import { Nav } from 'react-bootstrap';
+import SignUpForm from './SignUpForm';
 
 function SignUpLink() {
     const [modalShow, setModalShow] = React.useState(false);
@@ -35,7 +35,7 @@ function SignUpModal(props) {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <FormExample/>
+          <SignUpForm/>
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={props.onHide}>Close</Button>
