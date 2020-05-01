@@ -20,29 +20,35 @@ const Styles = styled.div`
 `;
 
 const submitLogin = async ({ email, password }) => {
-    return await fetch('http://localhost:3001/api/user/login', 
-    {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({email: email, password: password})
-    }).then(response =>
-        response.json().then(data => ({ 
-            data: data, 
-            status: response.status 
-        })
-    ).then(response => {
-        return response;
-    }).then(function(response) {
-        console.log(response.data.token);
-        console.log("Login was Successful! ");
-        return true;
-    }).catch(function(error) {
-        console.log("Login was not Successful.");
-        return false;
-    }))
+    try {
+        return await fetch('http://localhost:3001/api/user/login', 
+        {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({email: email, password: password})
+        }).then(response =>
+            response.json().then(data => ({ 
+                data: data, 
+                status: response.status 
+            })
+        ).then(response => {
+            return response;
+        }).then(function(response) {
+            if (response.status === 200) {
+                console.log("Login was Successful! ");
+            }
+            return response;
+        }).catch(function(error) {
+            console.log(error);
+            console.log("Login was not Successful.");
+            return null;
+        }))
+    } catch(error) {
+        return null;
+    }
 }
 
 const alphanumericRegex = '^[a-zA-Z0-9]+$';
@@ -57,9 +63,12 @@ const schema = yup.object({
 });
 
 function LoginForm() {
+  const defaultLoginError = 'Sorry, it looks like something went wrong when attempting to login to your account. Please try to login again after some time.';
+
   const [showFailure, setShowFailure] = React.useState(false);
   const [showSuccess, setShowSuccess] = React.useState(false);
   const [hideLoading, setHideLoading] = React.useState(true);
+  const [loginFailureDesc, setLoginFailureDesc] = React.useState(defaultLoginError);
 
   return (
     <Styles>
@@ -67,12 +76,23 @@ function LoginForm() {
         validationSchema={schema}
         onSubmit={
           async (values) => {
-            if (await submitLogin(values)) {
-              setShowSuccess(true);
-              setShowFailure(false);
+            let loginResponse = await submitLogin(values);
+            setLoginFailureDesc(defaultLoginError);
+            setShowFailure(false);
+            setShowSuccess(false);
+
+            if (loginResponse !== null) {
+                if (loginResponse.status === 200) {
+                    console.log(loginResponse.data.token);
+                    setShowSuccess(true);
+                    setShowFailure(false);
+                } else {
+                    setLoginFailureDesc(loginResponse.data.error);
+                    setShowFailure(true);
+                    setShowSuccess(false);
+                }
             } else {
-              setShowFailure(true);
-              setShowSuccess(false);
+                setShowFailure(true);
             }
             setHideLoading(true);
           }
@@ -127,15 +147,13 @@ function LoginForm() {
             <Alert variant="success" onClose={() => setShowSuccess(false)} dismissible show={showSuccess}>
             <Alert.Heading>Success! You are now logged in!</Alert.Heading>
               <p>
-                Your account has been successfully Logged in. You may now proceed with what you want. 
+                Your account has been successfully Logged in.
               </p>
             </Alert>
             <Alert variant="danger" onClose={() => setShowFailure(false)} dismissible show={showFailure}>
             <Alert.Heading>Oh snap! Login failed!</Alert.Heading>
               <p>
-                Sorry, it looks like something went wrong when attempting to login to your account.
-                This is typically due to the email and or password you provided not matching. If not,
-                please try to login again after some time.
+                {loginFailureDesc}
               </p>
             </Alert>
           </Form>

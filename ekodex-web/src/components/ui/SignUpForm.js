@@ -21,28 +21,34 @@ const Styles = styled.div`
 `;
 
 const submitSignUp = async ({ firstName, lastName, username, email, password }) => {
-    return await fetch('http://localhost:3001/api/user/register', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({name: firstName + ' ' + lastName, username: username, email: email, password: password})
-    }).then(response =>
-      response.json().then(data => ({ 
-          data: data, 
-          status: response.status 
-      })
-    ).then(response => {
+    try {
+      return await fetch('http://localhost:3001/api/user/register', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({name: firstName + ' ' + lastName, username: username, email: email, password: password})
+      }).then(response =>
+        response.json().then(data => ({ 
+            data: data, 
+            status: response.status 
+        })
+      ).then(response => {
+          return response;
+      }).then(function(response) {
+        if (response.status === 200) {
+          console.log("Sign up was Successful! ");
+        }
         return response;
-    }).then(function(response) {
-        console.log(response);
-        console.log("Login was Successful! ");
-        return true;
-    }).catch(function(error) {
-        console.log("Login was not Successful.");
-        return false;
-    }))
+      }).catch(function(error) {
+        console.log(error);
+        console.log("Sign up was not Successful.");
+        return null;
+      }))
+  } catch(error) {
+    return null;
+  }
 };
 
 const alphanumericRegex = '^[a-zA-Z0-9]+$';
@@ -72,9 +78,12 @@ const schema = yup.object({
 });
 
 function SignUpForm() {
+  const defaultSignUpError = 'Sorry, it looks like something went wrong when attempting to register to your account. Please try to register again after some time.';
+
   const [showFailure, setShowFailure] = React.useState(false);
   const [showSuccess, setShowSuccess] = React.useState(false);
   const [hideLoading, setHideLoading] = React.useState(true);
+  const [signUpFailureDesc, setSignUpFailureDesc] = React.useState(defaultSignUpError);
 
   return (
     <Styles>
@@ -82,12 +91,22 @@ function SignUpForm() {
         validationSchema={schema}
         onSubmit={
           async (values) => {
-            if (await submitSignUp(values)) {
-              setShowSuccess(true);
-              setShowFailure(false);
+            let signUpResponse = await submitSignUp(values);
+            setSignUpFailureDesc(defaultSignUpError);
+            setShowFailure(false);
+            setShowSuccess(false);
+
+            if (signUpResponse !== null) {
+                if (signUpResponse.status === 200) {
+                    setShowSuccess(true);
+                    setShowFailure(false);
+                } else {
+                    setSignUpFailureDesc(signUpResponse.data.error);
+                    setShowFailure(true);
+                    setShowSuccess(false);
+                }
             } else {
-              setShowFailure(true);
-              setShowSuccess(false);
+                setShowFailure(true);
             }
             setHideLoading(true);
           }
@@ -211,12 +230,9 @@ function SignUpForm() {
               </p>
             </Alert>
             <Alert variant="danger" onClose={() => setShowFailure(false)} dismissible show={showFailure}>
-            <Alert.Heading>Oh snap! Something went wrong!</Alert.Heading>
+            <Alert.Heading>Oh snap! Registration failed!</Alert.Heading>
               <p>
-                Sorry, it looks like something went wrong when attempting to register your account.
-                This is typically due to the email provided already being registered under another 
-                account. Please ensure that there is no other account associated with the provided
-                email or try again after some time.
+                {signUpFailureDesc}
               </p>
             </Alert>
           </Form>
