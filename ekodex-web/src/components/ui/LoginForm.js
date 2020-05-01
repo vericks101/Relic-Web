@@ -36,7 +36,7 @@ const submitLogin = async ({ email, password }) => {
     ).then(response => {
         return response;
     }).then(function(response) {
-        console.log(response);
+        console.log(response.data.token);
         console.log("Login was Successful! ");
         return true;
     }).catch(function(error) {
