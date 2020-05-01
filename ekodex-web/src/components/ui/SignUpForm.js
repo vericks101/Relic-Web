@@ -6,11 +6,17 @@ import Col from 'react-bootstrap/Col'
 import InputGroup from 'react-bootstrap/InputGroup'
 import Button from 'react-bootstrap/Button'
 import Alert from 'react-bootstrap/Alert'
+import Spinner from 'react-bootstrap/Spinner'
 import styled from '../../../node_modules/styled-components';
 
 const Styles = styled.div`
     .btn-primary {
-        margin-bottom: 7px;
+      margin-bottom: 7px;
+    }
+
+    .spinner-border {
+      position: absolute;
+      margin: 3px;
     }
 `;
 
@@ -63,6 +69,7 @@ const schema = yup.object({
 function SignUpForm() {
   const [showFailure, setShowFailure] = React.useState(false);
   const [showSuccess, setShowSuccess] = React.useState(false);
+  const [hideLoading, setHideLoading] = React.useState(true);
 
   return (
     <Styles>
@@ -77,6 +84,7 @@ function SignUpForm() {
               setShowFailure(true);
               setShowSuccess(false);
             }
+            setHideLoading(true);
           }
         }
         initialValues={{
@@ -188,7 +196,8 @@ function SignUpForm() {
                 </Form.Control.Feedback>
               </Form.Group>
             </Form.Row>
-            <Button type="submit">Submit form</Button>
+            <Button type="submit" onClick={() => setHideLoading(false)}>Submit form</Button>
+            <Spinner animation="border" hidden={hideLoading}/>
             <Alert variant="success" onClose={() => setShowSuccess(false)} dismissible show={showSuccess}>
             <Alert.Heading>Success! You are registered!</Alert.Heading>
               <p>
