@@ -10,12 +10,16 @@ import JumbotronFooter from './components/ui/JumbotronFooter';
 import { NavigationBar } from './components/ui/NavigationBar';
 import { Provider } from 'react-redux';
 import store from './store';
+import {PersistGate} from 'redux-persist/lib/integration/react';
+import {persistStore} from 'redux-persist';
 
 class App extends Component {
   render() {
+    const persistor = persistStore(store);
     return (
       <React.Fragment>
         <Provider store={store}>
+          <PersistGate persistor={persistor}>
           <NavigationBar/>
           <Layout>
             <Router>
@@ -28,6 +32,7 @@ class App extends Component {
             </Router>
           </Layout>
           <JumbotronFooter/>
+          </PersistGate>
         </Provider>
       </React.Fragment>
     );
