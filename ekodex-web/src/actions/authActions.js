@@ -1,16 +1,7 @@
-import { REGISTER_USER, LOGIN_USER } from './types';
-
-export const registerUser = () => dispatch => {
-    fetch('https://jsonplaceholder.typicode.com/posts')
-    .then(res => res.json())
-    .then(posts => dispatch({
-        type: REGISTER_USER,
-        payload: posts
-    }));
-};
+import { LOGIN_USER } from './types';
 
 export const loginUser = (postData) => dispatch => {
-    fetch('https://jsonplaceholder.typicode.com/posts', {
+    fetch('http://localhost:3001/api/user/login', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
@@ -18,8 +9,8 @@ export const loginUser = (postData) => dispatch => {
         body: JSON.stringify(postData)
     })
     .then(res => res.json())
-    .then(post => dispatch({
+    .then(authToken => dispatch({
         type: LOGIN_USER,
-        payload: post
+        payload: authToken.token
     }));
 };

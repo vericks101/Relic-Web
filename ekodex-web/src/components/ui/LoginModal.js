@@ -4,18 +4,19 @@ import Modal from 'react-bootstrap/Modal'
 import { Nav } from 'react-bootstrap';
 import LoginForm from './LoginForm';
 
-function LoginLink() {
+function LoginLink(props) {
     const [modalShow, setModalShow] = React.useState(false);
   
     return (
       <>
         <Nav.Link eventKey="1" onClick={() => setModalShow(true)}>
+          {props.updateLoginState}
           Login
         </Nav.Link>
-  
         <LoginModal
           show={modalShow}
           onHide={() => setModalShow(false)}
+          updateLoginState={props.updateLoginState}
         />
       </>
     );
@@ -35,7 +36,7 @@ function LoginModal(props) {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <LoginForm/>
+          <LoginForm updateLoginState={props.updateLoginState} />
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={props.onHide}>Close</Button>

@@ -62,7 +62,7 @@ const schema = yup.object({
     .matches(alphanumericRegex, 'May only contain alphanumeric characters. ')
 });
 
-function LoginForm() {
+function LoginForm(props) {
   const defaultLoginError = 'Sorry, it looks like something went wrong when attempting to login to your account. Please try to login again after some time.';
 
   const [showFailure, setShowFailure] = React.useState(false);
@@ -84,7 +84,7 @@ function LoginForm() {
 
             if (loginResponse !== null) {
                 if (loginResponse.status === 200) {
-                    console.log(loginResponse.data.token);
+                    props.updateLoginState({email: values.email, password: values.password});
                     setShowSuccess(true);
                     setShowFailure(false);
                 } else {
