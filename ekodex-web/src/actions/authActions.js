@@ -1,4 +1,4 @@
-import { LOGIN_USER } from './types';
+import { LOGIN_USER, LOGOUT_USER } from './types';
 
 export const loginUser = (postData) => dispatch => {
     fetch('http://localhost:3001/api/user/login', {
@@ -13,4 +13,10 @@ export const loginUser = (postData) => dispatch => {
         type: LOGIN_USER,
         payload: authToken.token
     }));
+};
+
+export const logoutUser = () => dispatch => {
+    dispatch({
+        type: LOGOUT_USER
+    });
 };

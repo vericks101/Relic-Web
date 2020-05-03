@@ -9,7 +9,7 @@ const Styles = styled.div`
         background-color: #222;
     }
 
-    .navbar-brand, .navbar-nav .nav-link, .navbar-light .navbar-nav .nav-link.active {
+    .navbar-brand, .navbar-nav .nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show .nav-link, .navbar-light .navbar-nav .nav-link:focus {
         color: #bbb;
 
         &:hover {
@@ -28,8 +28,7 @@ export const NavigationBar = () => (
                     <Nav.Item><Nav.Link href='/'>Home</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href='/about'>About</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href='/contact'>Contact</Nav.Link></Nav.Item>
-                    {/* <Nav.Item><SignUpLink/></Nav.Item> */}
-                    {<Nav.Item><LoginComponent/></Nav.Item>}
+                    <Nav.Item><LoginComponent/></Nav.Item>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
