@@ -91,6 +91,7 @@ function SignUpForm() {
         validationSchema={schema}
         onSubmit={
           async (values) => {
+            setHideLoading(false);
             let signUpResponse = await submitSignUp(values);
             setSignUpFailureDesc(defaultSignUpError);
             setShowFailure(false);
@@ -220,7 +221,7 @@ function SignUpForm() {
                 </Form.Control.Feedback>
               </Form.Group>
             </Form.Row>
-            <Button type="submit" onClick={() => setHideLoading(false)}>Submit form</Button>
+            <Button type="submit">Submit form</Button>
             <Spinner animation="border" hidden={hideLoading}/>
             <Alert variant="success" onClose={() => setShowSuccess(false)} dismissible show={showSuccess}>
             <Alert.Heading>Success! You are registered!</Alert.Heading>

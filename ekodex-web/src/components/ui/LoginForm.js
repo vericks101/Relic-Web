@@ -76,6 +76,7 @@ function LoginForm() {
         validationSchema={schema}
         onSubmit={
           async (values) => {
+            setHideLoading(false);
             let loginResponse = await submitLogin(values);
             setLoginFailureDesc(defaultLoginError);
             setShowFailure(false);
@@ -142,7 +143,7 @@ function LoginForm() {
                 </Form.Control.Feedback>
               </Form.Group>
             </Form.Row>
-            <Button type="submit" onClick={() => setHideLoading(false)}>Submit form</Button>
+            <Button type="submit">Submit form</Button>
             <Spinner animation="border" hidden={hideLoading}/>
             <Alert variant="success" onClose={() => setShowSuccess(false)} dismissible show={showSuccess}>
             <Alert.Heading>Success! You are now logged in!</Alert.Heading>
