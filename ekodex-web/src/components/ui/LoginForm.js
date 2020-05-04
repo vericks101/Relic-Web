@@ -99,8 +99,8 @@ function LoginForm(props) {
           }
         }
         initialValues={{
-          email: 'test123@gmail.com',
-          password: 'test123'
+          email: '',
+          password: ''
         }}
       >
         {({

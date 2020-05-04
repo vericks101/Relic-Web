@@ -21,23 +21,10 @@ const CardDeckContainer = () => {
                         <Card.Title>Card title</Card.Title>
                         <Card.Text>
                         This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.
+                        additional content. This card has even longer content than the first to
+                        show that equal height action.
                         </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                    <Card.Footer>
-                        <small className="text-muted"></small>
-                    </Card.Footer>
-                    </Card>
-                    <Card className="text-center">
-                    <Card.Img variant="top" src={require('../../assets/test.jpg')} />
-                    <Card.Body>
-                        <Card.Title>Card title</Card.Title>
-                        <Card.Text>
-                        This card has supporting text below as a natural lead-in to additional
-                        content.{' '}
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
+                        <Button variant="outline-light">Go somewhere</Button>
                     </Card.Body>
                     <Card.Footer>
                         <small className="text-muted"></small>
@@ -52,7 +39,7 @@ const CardDeckContainer = () => {
                         additional content. This card has even longer content than the first to
                         show that equal height action.
                         </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
+                        <Button variant="outline-light">Go somewhere</Button>
                     </Card.Body>
                     <Card.Footer>
                         <small className="text-muted"></small>
@@ -67,7 +54,22 @@ const CardDeckContainer = () => {
                         additional content. This card has even longer content than the first to
                         show that equal height action.
                         </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
+                        <Button variant="outline-light">Go somewhere</Button>
+                    </Card.Body>
+                    <Card.Footer>
+                        <small className="text-muted"></small>
+                    </Card.Footer>
+                    </Card>
+                    <Card className="text-center">
+                    <Card.Img variant="top" src={require('../../assets/test.jpg')} />
+                    <Card.Body>
+                        <Card.Title>Card title</Card.Title>
+                        <Card.Text>
+                        This is a wider card with supporting text below as a natural lead-in to
+                        additional content. This card has even longer content than the first to
+                        show that equal height action.
+                        </Card.Text>
+                        <Button variant="outline-light">Go somewhere</Button>
                     </Card.Body>
                     <Card.Footer>
                         <small className="text-muted"></small>

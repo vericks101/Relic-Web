@@ -7,6 +7,7 @@ import { Contact } from './components/pages/Contact';
 import { NoMatch } from './components/pages/NoMatch';
 import { Layout } from './components/Layout';
 import JumbotronFooter from './components/ui/JumbotronFooter';
+import JumbotronHeader from './components/ui/JumbotronHeader';
 import { NavigationBar } from './components/ui/NavigationBar';
 import { Provider } from 'react-redux';
 import store from './store';
@@ -21,6 +22,7 @@ class App extends Component {
         <Provider store={store}>
           <PersistGate persistor={persistor}>
           <NavigationBar/>
+          <JumbotronHeader/>
           <Layout>
             <Router>
               <Switch>

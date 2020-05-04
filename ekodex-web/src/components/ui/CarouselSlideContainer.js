@@ -1,18 +1,9 @@
 import React from '../../../node_modules/react';
 import Carousel from '../../../node_modules/react-bootstrap/Carousel';
 import Button from '../../../node_modules/react-bootstrap/Button';
-import styled from '../../../node_modules/styled-components';
-
-const Styles = styled.div`
-    .carousel {
-        padding-top: 5px;
-        padding-bottom: 150px;
-    }
-`;
 
 const CarouselSlideContainer = () => {
     return(
-        <Styles>
             <div>
             <Carousel>
                 <Carousel.Item>
@@ -54,7 +45,6 @@ const CarouselSlideContainer = () => {
                 </Carousel.Item>
                 </Carousel>
             </div>
-        </Styles>
     );
 }
 

@@ -113,12 +113,12 @@ function SignUpForm() {
           }
         }
         initialValues={{
-          firstName: 'Victor',
-          lastName: 'Erickson',
-          username: 'test123',
-          email: 'test123@gmail.com',
-          password: 'test123',
-          confirmPassword: 'test123',
+          firstName: '',
+          lastName: '',
+          username: '',
+          email: '',
+          password: '',
+          confirmPassword: '',
         }}
       >
         {({

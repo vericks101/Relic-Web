@@ -2,6 +2,7 @@ import React from '../../../node_modules/react';
 import CardDeckContainer from '../ui/CardDeckContainer';
 import CarouselSlideContainer from '../ui/CarouselSlideContainer';
 import styled from '../../../node_modules/styled-components';
+import JumbotronFooter from '../ui/JumbotronFooter'
 
 const Styles = styled.div`
     .GameListing {
@@ -17,15 +18,14 @@ const Styles = styled.div`
 export const Home = () => (
     <Styles>
         <div>
-            <CarouselSlideContainer/>
-            <div className = 'GameListing'>
+            {/* <div className = 'GameListing'>
                 <h1>EXPLORE GAMES</h1>
-            </div>
+            </div> */}
             <CardDeckContainer/>
-            <div className = 'NewsListing'>
+            {/* <div className = 'NewsListing'>
                 <h1>LATEST NEWS</h1>
-            </div>
-            <CardDeckContainer/>
+            </div> */}
+            {/* <CardDeckContainer/> */}
         </div>
     </Styles>
 )

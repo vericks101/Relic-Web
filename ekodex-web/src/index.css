@@ -5,9 +5,27 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: darkcyan;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.foobar {
+  background-color: #111111;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #d1d1d1 !important;
+}
+
+.navbar-light .navbar-brand {
+  color: #d1d1d1 !important;
+}
+
+.card {
+  background-color: #191919 !important;
+  color: #d1d1d1 !important;
 }

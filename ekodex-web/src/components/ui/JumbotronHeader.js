@@ -1,19 +1,19 @@
-import React from '../../../node_modules/react';
-import Jumbotron from '../../../node_modules/react-bootstrap/Jumbotron';
-import Button from '../../../node_modules/react-bootstrap/Button';
-import styled from '../../../node_modules/styled-components';
+import React from 'react';
+import Jumbotron from 'react-bootstrap/Jumbotron';
+import Button from 'react-bootstrap/Button';
+import styled from 'styled-components';
 
 const Styles = styled.div`
     .jumbotron {
         text-align: center;
         margin-bottom: 0px;
-        padding: 5rem 2rem;
+        padding: 10rem 2rem;
         background-color: #191919;
-        color: #d1d1d1;
+        color: #d1d1d1
     }
 `;
 
-const JumbotronFooter = () => {
+const JumbotronHeader = () => {
     return(
         <Styles>
             <div>
@@ -32,4 +32,4 @@ const JumbotronFooter = () => {
     );
 }
 
-export default JumbotronFooter;
+export default JumbotronHeader;

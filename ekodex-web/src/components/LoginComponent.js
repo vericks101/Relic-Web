@@ -4,7 +4,7 @@ import { connect} from 'react-redux';
 import { loginUser, logoutUser } from '../actions/authActions';
 import LoginLink from './ui/LoginModal';
 import SignUpLink from './ui/SignUpModal';
-import { Nav, NavItem, Dropdown, NavLink } from 'react-bootstrap';
+import { Nav, NavDropdown } from 'react-bootstrap';
 
 class LoginComponent extends Component {
 
@@ -21,15 +21,13 @@ class LoginComponent extends Component {
             <div>
                 {this.props.isLoggedIn ? 
                     <Nav>
-                    <Dropdown as={NavItem}>
-                        <Dropdown.Toggle as={NavLink}>My Account</Dropdown.Toggle>
-                            <Dropdown.Menu>
-                                <Dropdown.Item onClick={this.updateToLoggedOutState}>Logout</Dropdown.Item>
-                            </Dropdown.Menu>
-                        </Dropdown>;
+                        <NavDropdown title="My Account" id="nav-dropdown">
+                            <NavDropdown.Item onClick={this.updateToLoggedOutState}>Logout</NavDropdown.Item>
+                        </NavDropdown>
                     </Nav> : 
-                    <Nav>
-                        <SignUpLink/><LoginLink updateLoginState={this.updateToLoggedInState}/>
+                    <Nav activeKey="/do">
+                        <SignUpLink/>
+                        <LoginLink updateLoginState={this.updateToLoggedInState}/>
                     </Nav>
                 }
             </div>
