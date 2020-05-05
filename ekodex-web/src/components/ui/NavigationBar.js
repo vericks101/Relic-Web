@@ -20,7 +20,7 @@ import '../../index.css';
 // `;
 
 export const NavigationBar = () => (
-    <Navbar className="foobar" collapseOnSelect expand="lg" sticky="top">
+    <Navbar className="nav-background" collapseOnSelect expand="lg" sticky="top">
     <Navbar.Brand href="/">EKODEX</Navbar.Brand>
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
     <Navbar.Collapse id="responsive-navbar-nav">

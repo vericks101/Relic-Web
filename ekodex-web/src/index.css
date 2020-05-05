@@ -13,19 +13,44 @@ code {
     monospace;
 }
 
-.foobar {
+.nav-background {
   background-color: #111111;
 }
 
-.navbar-light .navbar-nav .nav-link {
+a {
   color: #d1d1d1 !important;
+  font-family: "VCR_OSD_MONO_1.001";
 }
 
-.navbar-light .navbar-brand {
-  color: #d1d1d1 !important;
+.navbar-brand {
+  color: white !important;
+  font-weight: bold;
+  font-family: "VCR_OSD_MONO_1.001";
+  font-size: 1.75rem !important;
+  font-stretch: expanded;
 }
 
 .card {
   background-color: #191919 !important;
-  color: #d1d1d1 !important;
+  color: white !important;
+  font-family: "VCR_OSD_MONO_1.001";
 }
+
+.modal-content {
+  font-family: "VCR_OSD_MONO_1.001";
+  color: white;
+  background-color: #191919 !important;
+}
+
+.btn-outline-light {
+  margin: 8px;
+}
+
+@font-face {
+  font-family: "VCR_OSD_MONO_1.001";
+  src: url("./assets/typewriter/VCR_OSD_MONO_1.001.ttf");
+  src:
+  url("./assets/typewriter/vcr_osd_mono_1.001-webfont.woff") format("woff"),
+  url("./assets/typewriter/vcr_osd_mono_1.001-webfont.eot") format("eot"),
+  url("./assets/typewriter/vcr_osd_mono_1.001-webfont.svg") format("svg");
+  }

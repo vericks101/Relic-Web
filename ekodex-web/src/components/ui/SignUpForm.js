@@ -16,7 +16,7 @@ const Styles = styled.div`
 
     .spinner-border {
       position: absolute;
-      margin: 3px;
+      margin: 8px 0px 1px 1px;
     }
 `;
 
@@ -137,6 +137,7 @@ function SignUpForm() {
                 <Form.Control
                   type="text"
                   name="firstName"
+                  placeholder="First name"
                   value={values.firstName}
                   onChange={handleChange}
                   isValid={touched.firstName && !errors.firstName}
@@ -148,6 +149,7 @@ function SignUpForm() {
                 <Form.Control
                   type="text"
                   name="lastName"
+                  placeholder="Last name"
                   value={values.lastName}
                   onChange={handleChange}
                   isValid={touched.lastName && !errors.lastName}
@@ -155,7 +157,7 @@ function SignUpForm() {
                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
               </Form.Group>
               <Form.Group as={Col} md="4" controlId="validationFormikUsername">
-                <Form.Label>Username</Form.Label>
+                <Form.Label>Username*</Form.Label>
                 <InputGroup>
                   <InputGroup.Prepend>
                     <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
@@ -177,7 +179,7 @@ function SignUpForm() {
             </Form.Row>
             <Form.Row>
               <Form.Group as={Col} md="6" controlId="validationFormik03">
-                <Form.Label>Email</Form.Label>
+                <Form.Label>Email*</Form.Label>
                 <Form.Control
                   type="text"
                   placeholder="Email"
@@ -192,7 +194,7 @@ function SignUpForm() {
                 </Form.Control.Feedback>
               </Form.Group>
               <Form.Group as={Col} md="3" controlId="validationFormik04">
-                <Form.Label>Password</Form.Label>
+                <Form.Label>Password*</Form.Label>
                 <Form.Control
                   type="password"
                   placeholder="Password"
@@ -206,7 +208,7 @@ function SignUpForm() {
                 </Form.Control.Feedback>
               </Form.Group>
               <Form.Group as={Col} md="3" controlId="validationFormik05">
-                <Form.Label>Confirm Password</Form.Label>
+                <Form.Label>Confirm Password*</Form.Label>
                 <Form.Control
                   type="password"
                   placeholder="Confirm Password"
@@ -221,7 +223,7 @@ function SignUpForm() {
                 </Form.Control.Feedback>
               </Form.Group>
             </Form.Row>
-            <Button type="submit">Submit form</Button>
+            <Button variant="outline-light" type="submit">Submit form</Button>
             <Spinner animation="border" hidden={hideLoading}/>
             <Alert variant="success" onClose={() => setShowSuccess(false)} dismissible show={showSuccess}>
             <Alert.Heading>Success! You are registered!</Alert.Heading>

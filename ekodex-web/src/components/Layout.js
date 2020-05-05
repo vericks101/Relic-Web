@@ -5,7 +5,7 @@ import styled from '../../node_modules/styled-components';
 const Styles = styled.div`
     .container {
         max-width: 100%;
-        background-color: #252525;
+        background-color: #1b1b1b;
     }
 `;
 

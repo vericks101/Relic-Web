@@ -15,7 +15,7 @@ const Styles = styled.div`
 
     .spinner-border {
       position: absolute;
-      margin: 3px;
+      margin: 8px 0px 1px 1px;
     }
 `;
 
@@ -143,7 +143,7 @@ function LoginForm(props) {
                 </Form.Control.Feedback>
               </Form.Group>
             </Form.Row>
-            <Button type="submit">Submit form</Button>
+            <Button variant="outline-light" type="submit">Submit form</Button>
             <Spinner animation="border" hidden={hideLoading}/>
             <Alert variant="success" onClose={() => setShowSuccess(false)} dismissible show={showSuccess}>
             <Alert.Heading>Success! You are now logged in!</Alert.Heading>
