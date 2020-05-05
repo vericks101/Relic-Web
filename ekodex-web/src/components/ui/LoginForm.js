@@ -145,12 +145,12 @@ function LoginForm(props) {
             </Form.Row>
             <Button variant="outline-light" type="submit">Submit form</Button>
             <Spinner animation="border" hidden={hideLoading}/>
-            <Alert variant="success" onClose={() => setShowSuccess(false)} dismissible show={showSuccess}>
+            {/* <Alert variant="success" onClose={() => setShowSuccess(false)} dismissible show={showSuccess}>
             <Alert.Heading>Success! You are now logged in!</Alert.Heading>
               <p>
                 Your account has been successfully Logged in.
               </p>
-            </Alert>
+            </Alert> */}
             <Alert variant="danger" onClose={() => setShowFailure(false)} dismissible show={showFailure}>
             <Alert.Heading>Oh snap! Login failed!</Alert.Heading>
               <p>
