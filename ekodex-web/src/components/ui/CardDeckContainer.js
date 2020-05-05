@@ -24,7 +24,7 @@ const CardDeckContainer = () => {
                         additional content. This card has even longer content than the first to
                         show that equal height action.
                         </Card.Text>
-                        <Button variant="outline-light">Go somewhere</Button>
+                        <Button variant="outline-light">Learn more</Button>
                     </Card.Body>
                     <Card.Footer>
                         <small className="text-muted"></small>
@@ -39,7 +39,7 @@ const CardDeckContainer = () => {
                         additional content. This card has even longer content than the first to
                         show that equal height action.
                         </Card.Text>
-                        <Button variant="outline-light">Go somewhere</Button>
+                        <Button variant="outline-light">Learn more</Button>
                     </Card.Body>
                     <Card.Footer>
                         <small className="text-muted"></small>
@@ -54,7 +54,7 @@ const CardDeckContainer = () => {
                         additional content. This card has even longer content than the first to
                         show that equal height action.
                         </Card.Text>
-                        <Button variant="outline-light">Go somewhere</Button>
+                        <Button variant="outline-light">Learn more</Button>
                     </Card.Body>
                     <Card.Footer>
                         <small className="text-muted"></small>
@@ -69,7 +69,7 @@ const CardDeckContainer = () => {
                         additional content. This card has even longer content than the first to
                         show that equal height action.
                         </Card.Text>
-                        <Button variant="outline-light">Go somewhere</Button>
+                        <Button variant="outline-light">Learn more</Button>
                     </Card.Body>
                     <Card.Footer>
                         <small className="text-muted"></small>

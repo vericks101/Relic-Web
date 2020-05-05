@@ -22,10 +22,9 @@ const JumbotronHeader = () => {
             <Jumbotron fluid style={{ backgroundImage: `url(${bgimage})`, backgroundSize: 'cover' }}>
                 <h1>Download the Client!</h1>
                 <p>
-                    This is a simple hero unit, a simple jumbotron-style component for calling
-                    extra attention to featured content or information.
-                </p>
-                <p>
+                    A single Platform and Client for all Ekodex Games. Effortlessly install, stay updated automatically, and play 
+                    without needing to open the browser.
+                <p></p>
                     <Button variant="outline-light">Learn more</Button>
                 </p>
                 </Jumbotron>
