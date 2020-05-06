@@ -1,10 +1,10 @@
 import React from '../../../node_modules/react';
 import CardDeckContainer from '../ui/CardDeckContainer';
-import JumbotronHeader from '../ui/JumbotronHeader'
+import HomeJumbotronHeader from '../ui/HomeJumbotronHeader'
 
 export const Home = () => (
     <div>
-        <JumbotronHeader/>
+        <HomeJumbotronHeader/>
         <CardDeckContainer/>
     </div>
 )

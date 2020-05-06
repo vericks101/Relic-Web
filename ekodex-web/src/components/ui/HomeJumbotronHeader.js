@@ -15,17 +15,17 @@ const Styles = styled.div`
     }
 `;
 
-const JumbotronHeader = () => {
+const HomeJumbotronHeader = () => {
     return(
         <Styles>
             <div>
             <Jumbotron fluid style={{ backgroundImage: `url(${bgimage})`, backgroundSize: 'cover' }}>
                 <h1>Download the Client!</h1>
                 <p>
-                    A single Platform and Client for all Ekodex Games. Effortlessly install, stay updated automatically, and play 
+                    A single Platform and Client for all <b>EKODEX</b> Games. Effortlessly install, stay updated automatically, and play 
                     without needing to open the browser.
                 <p></p>
-                    <Button variant="outline-light">Learn more</Button>
+                    <Button variant="outline-light">Download Now</Button>
                 </p>
                 </Jumbotron>
             </div>
@@ -33,4 +33,4 @@ const JumbotronHeader = () => {
     );
 }
 
-export default JumbotronHeader;
+export default HomeJumbotronHeader;

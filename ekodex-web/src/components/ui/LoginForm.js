@@ -66,7 +66,6 @@ function LoginForm(props) {
   const defaultLoginError = 'Sorry, it looks like something went wrong when attempting to login to your account. Please try to login again after some time.';
 
   const [showFailure, setShowFailure] = React.useState(false);
-  const [showSuccess, setShowSuccess] = React.useState(false);
   const [hideLoading, setHideLoading] = React.useState(true);
   const [loginFailureDesc, setLoginFailureDesc] = React.useState(defaultLoginError);
 
@@ -80,17 +79,14 @@ function LoginForm(props) {
             let loginResponse = await submitLogin(values);
             setLoginFailureDesc(defaultLoginError);
             setShowFailure(false);
-            setShowSuccess(false);
 
             if (loginResponse !== null) {
                 if (loginResponse.status === 200) {
                     props.updateLoginState({email: values.email, password: values.password});
-                    setShowSuccess(true);
                     setShowFailure(false);
                 } else {
                     setLoginFailureDesc(loginResponse.data.error);
                     setShowFailure(true);
-                    setShowSuccess(false);
                 }
             } else {
                 setShowFailure(true);
@@ -145,12 +141,6 @@ function LoginForm(props) {
             </Form.Row>
             <Button variant="outline-light" type="submit">Submit form</Button>
             <Spinner animation="border" hidden={hideLoading}/>
-            {/* <Alert variant="success" onClose={() => setShowSuccess(false)} dismissible show={showSuccess}>
-            <Alert.Heading>Success! You are now logged in!</Alert.Heading>
-              <p>
-                Your account has been successfully Logged in.
-              </p>
-            </Alert> */}
             <Alert variant="danger" onClose={() => setShowFailure(false)} dismissible show={showFailure}>
             <Alert.Heading>Oh snap! Login failed!</Alert.Heading>
               <p>

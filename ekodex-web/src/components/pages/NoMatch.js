@@ -1,7 +1,8 @@
-import React from '../../../node_modules/react'
+import React from 'react';
+import NoMatchJumbotronHeader from '../ui/NoMatchJumbotronHeader';
 
 export const NoMatch = () => (
     <div>
-        <h2>No Match</h2>
+        <NoMatchJumbotronHeader/>
     </div>
 )
