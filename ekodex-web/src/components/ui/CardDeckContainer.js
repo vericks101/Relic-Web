@@ -19,7 +19,7 @@ const CardDeckContainer = () => {
         <Styles>
             <div className = 'CardContainer'>
                 <CardDeck>
-                    <Card className="text-center">
+                    <Card className="text-center" style={{ width: '50rem' }}>
                     <Card.Img variant="top" src={require('../../assets/unbound-banner.jpg')} />
                     <Card.Body>
                         <Card.Title><b>UNBOUND</b></Card.Title>
@@ -33,7 +33,7 @@ const CardDeckContainer = () => {
                         <small className="text-muted"></small>
                     </Card.Footer>
                     </Card>
-                    <Card className="text-center">
+                    {/* <Card className="text-center">
                     <Card.Img variant="top" src={require('../../assets/unbound-banner.jpg')} />
                     <Card.Body>
                         <Card.Title><b>TEST</b></Card.Title>
@@ -74,7 +74,7 @@ const CardDeckContainer = () => {
                     <Card.Footer>
                         <small className="text-muted"></small>
                     </Card.Footer>
-                    </Card>
+                    </Card> */}
                 </CardDeck>
             </div>
         </Styles>
