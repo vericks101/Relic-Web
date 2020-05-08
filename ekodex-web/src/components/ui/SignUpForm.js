@@ -55,9 +55,9 @@ const alphanumericRegex = '^[a-zA-Z0-9]+$';
 
 const schema = yup.object({
   firstName: yup.string()
-    .required(),
+    .required('First name is a required field.'),
   lastName: yup.string()
-    .required(),
+    .required('Last name is a required field.'),
   username: yup.string()
     .required('Username is a required field.')
     // eslint-disable-next-line
@@ -91,6 +91,7 @@ function SignUpForm() {
         validationSchema={schema}
         onSubmit={
           async (values) => {
+            console.log('clicked');
             setHideLoading(false);
             let signUpResponse = await submitSignUp(values);
             setSignUpFailureDesc(defaultSignUpError);
@@ -131,7 +132,6 @@ function SignUpForm() {
           errors,
         }) => (
           <Form noValidate onSubmit={handleSubmit}>
-            <div>*: Required Field</div>
             <Form.Row>
               <Form.Group as={Col} md="4" controlId="validationFormik01">
                 <Form.Label>First name</Form.Label>
@@ -141,9 +141,11 @@ function SignUpForm() {
                   placeholder="First name"
                   value={values.firstName}
                   onChange={handleChange}
-                  isValid={touched.firstName && !errors.firstName}
+                  isInvalid={!!errors.firstName}
                 />
-                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">
+                    {errors.firstName}
+                  </Form.Control.Feedback>
               </Form.Group>
               <Form.Group as={Col} md="4" controlId="validationFormik02">
                 <Form.Label>Last name</Form.Label>
@@ -153,12 +155,14 @@ function SignUpForm() {
                   placeholder="Last name"
                   value={values.lastName}
                   onChange={handleChange}
-                  isValid={touched.lastName && !errors.lastName}
+                  isInvalid={!!errors.lastName}
                 />
-                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">
+                    {errors.lastName}
+                  </Form.Control.Feedback>
               </Form.Group>
               <Form.Group as={Col} md="4" controlId="validationFormikUsername">
-                <Form.Label>Username*</Form.Label>
+                <Form.Label>Username</Form.Label>
                 <InputGroup>
                   <InputGroup.Prepend>
                     <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
@@ -180,7 +184,7 @@ function SignUpForm() {
             </Form.Row>
             <Form.Row>
               <Form.Group as={Col} md="6" controlId="validationFormik03">
-                <Form.Label>Email*</Form.Label>
+                <Form.Label>Email</Form.Label>
                 <Form.Control
                   type="text"
                   placeholder="Email"
@@ -195,7 +199,7 @@ function SignUpForm() {
                 </Form.Control.Feedback>
               </Form.Group>
               <Form.Group as={Col} md="3" controlId="validationFormik04">
-                <Form.Label>Password*</Form.Label>
+                <Form.Label>Password</Form.Label>
                 <Form.Control
                   type="password"
                   placeholder="Password"
@@ -209,7 +213,7 @@ function SignUpForm() {
                 </Form.Control.Feedback>
               </Form.Group>
               <Form.Group as={Col} md="3" controlId="validationFormik05">
-                <Form.Label>Confirm Password*</Form.Label>
+                <Form.Label>Confirm Password</Form.Label>
                 <Form.Control
                   type="password"
                   placeholder="Confirm Password"

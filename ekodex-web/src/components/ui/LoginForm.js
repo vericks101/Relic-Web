@@ -144,6 +144,7 @@ function LoginForm(props) {
               </Form.Group>
             </Form.Row>
             <Button variant="outline-light" type="submit">Submit</Button>
+            <Button variant="outline-light" onClick={() => {console.log('clicked forgot!')}}>Forgot Username or Password</Button>
             <Spinner animation="border" hidden={hideLoading}/>
             <Alert variant="danger" onClose={() => setShowFailure(false)} dismissible show={showFailure}>
             <Alert.Heading>Oh snap! Login failed!</Alert.Heading>
