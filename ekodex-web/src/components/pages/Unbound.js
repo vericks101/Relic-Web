@@ -8,47 +8,47 @@ const images = [
   {
     original: require('../../assets/unbound1.png'),
     thumbnail: require('../../assets/unbound1.png'),
-    description: 'Explore various planets throughout the solar system and visit the social station space to interact with your fellow comrades.',
+    // description: 'Explore various planets throughout the solar system and visit the social station space to interact with your fellow comrades.',
   },
   {
     original: require('../../assets/unbound2.png'),
     thumbnail: require('../../assets/unbound2.png'),
-    description: 'Within the social station space, interact with NPC\'s and see what they have to offer. Also, see item details to manage what they are offering to what you have.',
+    // description: 'Within the social station space, interact with NPC\'s and see what they have to offer. Also, see item details to manage what they are offering to what you have.',
   },
   {
     original: require('../../assets/unbound3.png'),
     thumbnail: require('../../assets/unbound3.png'),
-    description: 'Explore and manage your characters armor, weapons, and stats in order to customize and maximize out your gameplay experience.',
+    // description: 'Explore and manage your characters armor, weapons, and stats in order to customize and maximize out your gameplay experience.',
   },
   {
     original: require('../../assets/unbound4.png'),
     thumbnail: require('../../assets/unbound4.png'),
-    description: 'Explore various planets and see what you can find. Different planets have different enemies, environments, and riches to obtain.',
+    // description: 'Explore various planets and see what you can find. Different planets have different enemies, environments, and riches to obtain.',
   },
   {
     original: require('../../assets/unbound5.png'),
     thumbnail: require('../../assets/unbound5.png'),
-    description: 'Within the crafting bench, explore and discover the many different recipes that can lead to riches and loot you didn\'t know existed. Also, use the crafting menu to manage already known recipes to better manage them.',
+    // description: 'Within the crafting bench, explore and discover the many different recipes that can lead to riches and loot you didn\'t know existed. Also, use the crafting menu to manage already known recipes to better manage them.',
   },
   {
     original: require('../../assets/unbound6.png'),
     thumbnail: require('../../assets/unbound6.png'),
-    description: 'Through the quest management menu, see and manage your current quests. Alongside this, see the details of the quests you currently have to better understand current progress, goals, and rewards.',
+    // description: 'Through the quest management menu, see and manage your current quests. Alongside this, see the details of the quests you currently have to better understand current progress, goals, and rewards.',
   },
   {
     original: require('../../assets/unbound7.png'),
     thumbnail: require('../../assets/unbound7.png'),
-    description: 'Through your character skill trees, you will be explore, manage, and progress your characters skills, abilities, and stats to become more powerful.',
+    // description: 'Through your character skill trees, you will be explore, manage, and progress your characters skills, abilities, and stats to become more powerful.',
   },
   {
     original: require('../../assets/unbound8.png'),
     thumbnail: require('../../assets/unbound8.png'),
-    description: 'As you delve deeper into the various planets and environments at your disposal, you\'ll find new structures filled with riches and loot to discover.',
+    // description: 'As you delve deeper into the various planets and environments at your disposal, you\'ll find new structures filled with riches and loot to discover.',
   },
   {
     original: require('../../assets/unbound9.png'),
     thumbnail: require('../../assets/unbound9.png'),
-    description: 'When creating a new character, fully explore various customizable options for your character best suited to your style and taste.',
+    // description: 'When creating a new character, fully explore various customizable options for your character best suited to your style and taste.',
   },
 ]
 
