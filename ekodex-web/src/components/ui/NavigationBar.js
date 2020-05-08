@@ -17,9 +17,9 @@ export const NavigationBar = () => (
     <Navbar.Brand href="/">
         <img
             alt=""
-            src={require("../../assets/grey.jpg")}
-            width="30"
-            height="30"
+            src={require("../../assets/ekodexlogo.png")}
+            width="60"
+            height="60"
             className="navLogo"
         />{' '}
         EKODEX
