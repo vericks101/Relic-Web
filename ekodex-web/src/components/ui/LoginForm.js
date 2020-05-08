@@ -19,7 +19,7 @@ const Styles = styled.div`
     }
 `;
 
-const submitLogin = async ({ email, password }) => {
+const submitLogin = async ({ username, password }) => {
     try {
         return await fetch('http://localhost:3001/api/user/login', 
         {
@@ -28,7 +28,7 @@ const submitLogin = async ({ email, password }) => {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({email: email, password: password})
+        body: JSON.stringify({username: username, password: password})
         }).then(response =>
             response.json().then(data => ({ 
                 data: data, 
@@ -54,9 +54,13 @@ const submitLogin = async ({ email, password }) => {
 const alphanumericRegex = '^[a-zA-Z0-9]+$';
 
 const schema = yup.object({
-  email: yup.string()
-    .required('Email is a required field.')
-    .email('Email must be valid.'),
+  username: yup.string()
+    .required('Username is a required field.')
+    // eslint-disable-next-line
+    .min(6, "Must be at least ${min} characters.")
+    // eslint-disable-next-line
+    .max(15, "Must be no more than ${max} characters.")
+    .matches(alphanumericRegex, 'May only contain alphanumeric characters.'),
   password: yup.string()
     .required('Password is a required field. ')
     .matches(alphanumericRegex, 'May only contain alphanumeric characters. ')
@@ -82,7 +86,7 @@ function LoginForm(props) {
 
             if (loginResponse !== null) {
                 if (loginResponse.status === 200) {
-                    props.updateLoginState({email: values.email, password: values.password});
+                    props.updateLoginState({username: values.username, password: values.password});
                     setShowFailure(false);
                 } else {
                     setLoginFailureDesc(loginResponse.data.error);
@@ -95,7 +99,7 @@ function LoginForm(props) {
           }
         }
         initialValues={{
-          email: '',
+          username: '',
           password: ''
         }}
       >
@@ -110,21 +114,21 @@ function LoginForm(props) {
         }) => (
           <Form noValidate onSubmit={handleSubmit}>
             <Form.Row>
-              <Form.Group as={Col} md="6" controlId="validationFormik03">
-                <Form.Label>Email</Form.Label>
+              <Form.Group as={Col} md="6" controlId="validationFormik01">
+                <Form.Label>Username</Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="Email"
-                  name="email"
-                  value={values.email}
+                  placeholder="Username"
+                  name="username"
+                  value={values.username}
                   onChange={handleChange}
-                  isInvalid={!!errors.email}
+                  isInvalid={!!errors.username}
                 />
                 <Form.Control.Feedback type="invalid">
-                  {errors.email}
+                  {errors.username}
                 </Form.Control.Feedback>
               </Form.Group>
-              <Form.Group as={Col} md="6" controlId="validationFormik04">
+              <Form.Group as={Col} md="6" controlId="validationFormik02">
                 <Form.Label>Password</Form.Label>
                 <Form.Control
                   type="password"
