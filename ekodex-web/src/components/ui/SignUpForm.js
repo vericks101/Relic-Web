@@ -131,6 +131,7 @@ function SignUpForm() {
           errors,
         }) => (
           <Form noValidate onSubmit={handleSubmit}>
+            <div>*: Required Field</div>
             <Form.Row>
               <Form.Group as={Col} md="4" controlId="validationFormik01">
                 <Form.Label>First name</Form.Label>
@@ -223,7 +224,7 @@ function SignUpForm() {
                 </Form.Control.Feedback>
               </Form.Group>
             </Form.Row>
-            <Button variant="outline-light" type="submit">Submit form</Button>
+            <Button variant="outline-light" type="submit">Submit</Button>
             <Spinner animation="border" hidden={hideLoading}/>
             <Alert variant="success" onClose={() => setShowSuccess(false)} dismissible show={showSuccess}>
             <Alert.Heading>Success! You are registered!</Alert.Heading>

@@ -139,7 +139,7 @@ function LoginForm(props) {
                 </Form.Control.Feedback>
               </Form.Group>
             </Form.Row>
-            <Button variant="outline-light" type="submit">Submit form</Button>
+            <Button variant="outline-light" type="submit">Submit</Button>
             <Spinner animation="border" hidden={hideLoading}/>
             <Alert variant="danger" onClose={() => setShowFailure(false)} dismissible show={showFailure}>
             <Alert.Heading>Oh snap! Login failed!</Alert.Heading>

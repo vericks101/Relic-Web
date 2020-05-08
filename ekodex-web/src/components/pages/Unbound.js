@@ -1,6 +1,6 @@
 import React from 'react';
 import UnboundJumbotronHeader from '../ui/UnboundJumbotronHeader'
-import { Container, Tab, Tabs, Jumbotron, Card, Button, Badge } from 'react-bootstrap';
+import { Container, Tab, Tabs, Jumbotron, Card, Button, Badge, OverlayTrigger, Tooltip, Image } from 'react-bootstrap';
 import styled from 'styled-components';
 import ImageGallery from 'react-image-gallery';
 
@@ -104,6 +104,15 @@ const Styles = styled.div`
     .btn {
       margin: 0;
     }
+
+    .periodSeperator {
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .windowsLogo {
+      margin-bottom: 4.3px;
+    }
 `;
 
 export const Unbound = () => (
@@ -116,8 +125,28 @@ export const Unbound = () => (
                 <Card className="box1">
                   <Card.Body>
                     <Card.Title>Unbound</Card.Title>
-                    <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-                    <Button variant="outline-light">Download Now</Button>
+                    <Card.Subtitle className="mb-2 text-muted">
+                      <>
+                        <OverlayTrigger
+                          key={'windowslogo'}
+                          placement={'top'}
+                          overlay={
+                            <Tooltip id={`tooltip-${'windowslogo'}`}>
+                              Windows
+                            </Tooltip>
+                          }
+                        >
+                          <Image className="windowsLogo" src={require('../../assets/windowslogosmall.png')} />
+                        </OverlayTrigger>{' '}
+                        <span className="periodSeperator">.</span>
+                        <span>{' '}Version 1.0.0{' '}</span>
+                        <span className="periodSeperator">.</span>
+                        <span>{' '}Released Dec. 26th 2017{' '}</span>
+                      </>
+                    </Card.Subtitle>
+                    <>
+                      <Button variant="outline-light">Download via Client</Button>{' '}
+                    </>
                   </Card.Body>
                 </Card>
                 <Card className="box2">
@@ -154,7 +183,7 @@ export const Unbound = () => (
                 </Card>
               </Jumbotron>
             </Tab>
-            <Tab eventKey="something" title="Something">
+            {/* <Tab eventKey="something" title="Something">
               <Jumbotron fluid>
 
               </Jumbotron>
@@ -163,7 +192,7 @@ export const Unbound = () => (
               <Jumbotron fluid>
 
               </Jumbotron>
-            </Tab>
+            </Tab> */}
           </Tabs>
         </Container>
     </Styles>

@@ -22,7 +22,7 @@ const HomeJumbotronHeader = () => {
             <Jumbotron fluid style={{ backgroundImage: `url(${bgimage})`, backgroundSize: 'cover' }}>
                 <h1>Download the Client!</h1>
                 <p>
-                    A single Platform and Client for all <b>EKODEX</b> Games. Effortlessly install, stay updated automatically, and play 
+                    A single Platform for all <b>EKODEX</b> Games. Effortlessly install, stay updated automatically, and play 
                     without needing to open the browser.
                 <p></p>
                     <Button variant="outline-light">Download Now</Button>
