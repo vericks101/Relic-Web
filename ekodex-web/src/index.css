@@ -24,6 +24,11 @@ code {
   font-family: "VCR_OSD_MONO_1.001";
 }
 
+.nav-link:hover {
+  color: #dbdbdb !important;
+  font-family: "VCR_OSD_MONO_1.001";
+}
+
 .navbar-brand {
   color: white !important;
   font-weight: bold;
