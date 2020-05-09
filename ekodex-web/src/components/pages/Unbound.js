@@ -145,7 +145,7 @@ export const Unbound = () => (
                       </>
                     </Card.Subtitle>
                     <>
-                      <Button variant="outline-light">Download via Client</Button>{' '}
+                      <Button variant="outline-light" href="/client">Download via Client</Button>{' '}
                     </>
                   </Card.Body>
                 </Card>

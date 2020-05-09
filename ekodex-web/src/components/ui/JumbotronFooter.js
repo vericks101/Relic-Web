@@ -48,7 +48,6 @@ const JumbotronFooter = () => {
                             />
                             EKODEX
                         </h2>
-                        
                         <hr className="footerDivider"/>
                         <div className="logos">
                         <a href="/">
