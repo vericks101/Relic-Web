@@ -25,7 +25,7 @@ const HomeJumbotronHeader = () => {
                     A single Platform for all <b>EKODEX</b> Games. Effortlessly install, stay updated automatically, and play 
                     without needing to open the browser.
                 <p></p>
-                    <Button variant="outline-light">Download Now</Button>
+                    <Button variant="outline-light" href="/client">Download Now</Button>
                 </p>
                 </Jumbotron>
             </div>

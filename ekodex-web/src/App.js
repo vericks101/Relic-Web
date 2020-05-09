@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Home } from './components/pages/Home';
 import { Unbound } from './components/pages/Unbound';
+import { Client } from './components/pages/Client';
 import { NoMatch } from './components/pages/NoMatch';
 import { Layout } from './components/Layout';
 import JumbotronFooter from './components/ui/JumbotronFooter';
@@ -25,6 +26,7 @@ class App extends Component {
               <Switch>
                 <Route exact path='/' component={Home} />
                 <Route exact path='/unbound' component={Unbound} />
+                <Route exact path='/client' component={Client} />
                 <Route component={NoMatch} />
               </Switch>
             </Router>
