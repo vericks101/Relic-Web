@@ -68,6 +68,10 @@ code {
   color: white !important;
 }
 
+.navLogo {
+  margin-bottom: 5px;
+}
+
 @font-face {
   font-family: "VCR_OSD_MONO_1.001";
   src: url("./assets/typewriter/VCR_OSD_MONO_1.001.ttf");

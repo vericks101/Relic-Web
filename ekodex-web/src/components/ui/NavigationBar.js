@@ -1,18 +1,9 @@
 import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
-import styled from 'styled-components';
 import LoginComponent from '../LoginComponent';
 import '../../index.css';
 
-
-const Styles = styled.div`
-    .navLogo {
-        margin-bottom: 5px;
-    }
-`;
-
 export const NavigationBar = () => (
-    <Styles>
     <Navbar className="nav-background" collapseOnSelect expand="lg" sticky="top">
     <Navbar.Brand href="/">
         <img
@@ -31,5 +22,4 @@ export const NavigationBar = () => (
         </Nav>
     </Navbar.Collapse>
     </Navbar>
-    </Styles>
 )
