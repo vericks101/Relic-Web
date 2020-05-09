@@ -1,16 +1,34 @@
 import React from '../../../node_modules/react';
 import Jumbotron from '../../../node_modules/react-bootstrap/Jumbotron';
-import Button from '../../../node_modules/react-bootstrap/Button';
+import { Container } from 'react-bootstrap';
 import styled from '../../../node_modules/styled-components';
 
 const Styles = styled.div`
     .jumbotron {
         text-align: center;
         margin-bottom: 0px;
-        padding: 5rem 2rem;
+        padding-bottom: 150px;
+        padding-top: 20px;
         background-color: #191919;
         color: white;
         font-family: "VCR_OSD_MONO_1.001"
+    }
+
+    .bottomNavLogo {
+        float: left;
+    }
+
+    .footerDivider {
+    border-top: 1px solid white;
+    }
+
+    .socialMediaLogo {
+        margin-top: 22px;
+        margin-left: 5px;
+    }
+
+    .logos {
+        float: left;
     }
 `;
 
@@ -18,15 +36,50 @@ const JumbotronFooter = () => {
     return(
         <Styles>
             <div>
-            <Jumbotron fluid>
-                <h1>This is a Footer!</h1>
-                <p>
-                    This is a simple hero unit, a simple jumbotron-style component for calling
-                    extra attention to featured content or information.
-                </p>
-                <p>
-                    <Button variant="outline-light">Learn more</Button>
-                </p>
+                <Jumbotron fluid>
+                    <Container>
+                        <h2>
+                            <img
+                                alt=""
+                                src={require("../../assets/ekodexlogo.png")}
+                                width="60"
+                                height="60"
+                                className="navLogo"
+                            />
+                            EKODEX
+                        </h2>
+                        
+                        <hr className="footerDivider"/>
+                        <div className="logos">
+                        <a href="/">
+                            <img
+                                alt=""
+                                src={require("../../assets/ekodexlogo.png")}
+                                width="150"
+                                height="150"
+                                className="bottomNavLogo"
+                            />
+                        </a>
+                        <a href="/" target="_blank" rel="noopener noreferrer">
+                            <img
+                                alt=""
+                                src={require("../../assets/twitterlogo.png")}
+                                width="30"
+                                height="30"
+                                className="socialMediaLogo"
+                            />
+                        </a>
+                        <a href="/" target="_blank" rel="noopener noreferrer">
+                            <img
+                                alt=""
+                                src={require("../../assets/facebooklogo.png")}
+                                width="30"
+                                height="30"
+                                className="socialMediaLogo"
+                            />
+                        </a>
+                        </div>
+                    </Container>
                 </Jumbotron>
             </div>
         </Styles>

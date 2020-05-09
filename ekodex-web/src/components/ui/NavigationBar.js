@@ -12,7 +12,7 @@ export const NavigationBar = () => (
             width="60"
             height="60"
             className="navLogo"
-        />{' '}
+        />
         EKODEX
       </Navbar.Brand>
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
