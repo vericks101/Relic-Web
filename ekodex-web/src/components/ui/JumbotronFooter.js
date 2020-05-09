@@ -1,6 +1,6 @@
 import React from '../../../node_modules/react';
 import Jumbotron from '../../../node_modules/react-bootstrap/Jumbotron';
-import { Container } from 'react-bootstrap';
+import { Container, Button } from 'react-bootstrap';
 import styled from '../../../node_modules/styled-components';
 
 const Styles = styled.div`
@@ -9,7 +9,7 @@ const Styles = styled.div`
         margin-bottom: 0px;
         padding-bottom: 150px;
         padding-top: 20px;
-        background-color: #191919;
+        background-color: #111111;
         color: white;
         font-family: "VCR_OSD_MONO_1.001"
     }
@@ -46,7 +46,7 @@ const JumbotronFooter = () => {
                                 height="60"
                                 className="navLogo"
                             />
-                            EKODEX
+                            <b>EKODEX</b> Client<Button variant="outline-light" href="/client">Download Now</Button>
                         </h2>
                         <hr className="footerDivider"/>
                         <div className="logos">
