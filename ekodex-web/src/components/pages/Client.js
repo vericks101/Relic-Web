@@ -30,8 +30,8 @@ export const Client = () => (
                 <Jumbotron fluid className="headerJumbotron" style={{ backgroundImage: `url(${bgimage})`, backgroundSize: 'cover' }}>
                     <h1><b>EKODEX</b> Client</h1>
                     <p>
-                        A single Platform for all <b>EKODEX</b> Games. Effortlessly install, stay updated automatically, 
-                        <p>and play without needing to open the browser.</p>
+                        A single Platform for all <b>EKODEX</b> Games. Effortlessly install, stay updated automatically, synchronize 
+                        <p>progress, and play without needing to open the browser.</p>
                         <p></p>
                         <Button variant="outline-light" href="/client">Download for Windows</Button>
                     </p>
