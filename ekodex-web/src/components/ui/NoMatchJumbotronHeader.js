@@ -19,7 +19,7 @@ const NoMatchJumbotronHeader = () => {
             <div>
             <Jumbotron fluid>
                 <h1>Page Not Found</h1>
-                <p>You thought you found a secret but upon further investigation found that it was just an empty page...</p>
+                <p>You thought you found a secret but upon further investigation, found that it was just an empty page...</p>
             </Jumbotron>
             </div>
         </Styles>
