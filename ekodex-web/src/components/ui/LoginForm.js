@@ -3,9 +3,7 @@ import Form from 'react-bootstrap/Form'
 import { Formik } from 'formik'
 import * as yup from 'yup';
 import Col from 'react-bootstrap/Col'
-import Button from 'react-bootstrap/Button'
-import Alert from 'react-bootstrap/Alert'
-import Spinner from 'react-bootstrap/Spinner'
+import { Button, Alert, Spinner, Modal } from 'react-bootstrap'
 import styled from '../../../node_modules/styled-components';
 
 const Styles = styled.div`
@@ -53,7 +51,7 @@ const submitLogin = async ({ username, password }) => {
 
 const alphanumericRegex = '^[a-zA-Z0-9]+$';
 
-const schema = yup.object({
+const loginSchema = yup.object({
   username: yup.string()
     .required('Username is a required field.')
     // eslint-disable-next-line
@@ -72,11 +70,12 @@ function LoginForm(props) {
   const [showFailure, setShowFailure] = React.useState(false);
   const [hideLoading, setHideLoading] = React.useState(true);
   const [loginFailureDesc, setLoginFailureDesc] = React.useState(defaultLoginError);
+  const [modalShow, setModalShow] = React.useState(false);
 
   return (
     <Styles>
       <Formik
-        validationSchema={schema}
+        validationSchema={loginSchema}
         onSubmit={
           async (values) => {
             setHideLoading(false);
@@ -144,7 +143,7 @@ function LoginForm(props) {
               </Form.Group>
             </Form.Row>
             <Button variant="outline-light" type="submit">Submit</Button>
-            <Button variant="outline-light" onClick={() => {console.log('clicked forgot!')}}>Forgot Username or Password</Button>
+            <Button variant="outline-light" onClick={() => setModalShow(true)}>Forgot Username or Password</Button>
             <Spinner animation="border" hidden={hideLoading}/>
             <Alert variant="danger" onClose={() => setShowFailure(false)} dismissible show={showFailure}>
             <Alert.Heading>Oh snap! Login failed!</Alert.Heading>
@@ -155,7 +154,153 @@ function LoginForm(props) {
           </Form>
         )}
       </Formik>
+      <ForgotUsernameOrPasswordModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
     </Styles>
+  );
+}
+
+const submitForgotUsernameOrPassword = async ({ email }) => {
+  try {
+      return await fetch('http://localhost:3001/api/user/forgotusernameorpassword', 
+      {
+      method: 'POST',
+      headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({email: email})
+      }).then(response =>
+          response.json().then(data => ({ 
+              data: data, 
+              status: response.status 
+          })
+      ).then(response => {
+          return response;
+      }).then(function(response) {
+          if (response.status === 200) {
+              console.log("Reset email sent! ");
+          }
+          return response;
+      }).catch(function(error) {
+          console.log(error);
+          console.log("Reset email was not successfully sent.");
+          return null;
+      }))
+  } catch(error) {
+      return null;
+  }
+}
+
+const forgotUsernameOrPasswordSchema = yup.object({
+  email: yup.string()
+    .required('Email is a required field.')
+    .email('Email must be valid.')
+});
+
+function ForgotPasswordOrUsernameForm(props) {
+  const defaultforgotPasswordOrUsernameError = 'Sorry, it looks like something went wrong when attempting to send a reset email. Please try again after some time.';
+
+  const [showFailure, setShowFailure] = React.useState(false);
+  const [hideLoading, setHideLoading] = React.useState(true);
+  const [forgotPasswordOrUsernameFailureDesc, setforgotPasswordOrUsernameFailureDesc] = React.useState(defaultforgotPasswordOrUsernameError);
+  const [modalShow, setModalShow] = React.useState(false);
+
+  return (
+    <Styles>
+      <Formik
+        validationSchema={forgotUsernameOrPasswordSchema}
+        onSubmit={
+          async (values) => {
+            setHideLoading(false);
+            let forgotUsernameOrPasswordResponse = await submitForgotUsernameOrPassword(values);
+            setforgotPasswordOrUsernameFailureDesc(defaultforgotPasswordOrUsernameError);
+            setShowFailure(false);
+
+            if (forgotUsernameOrPasswordResponse !== null) {
+                if (forgotUsernameOrPasswordResponse.status === 200) {
+                    setShowFailure(false);
+                } else {
+                  setforgotPasswordOrUsernameFailureDesc(forgotUsernameOrPasswordResponse.data.error);
+                    setShowFailure(true);
+                }
+            } else {
+                setShowFailure(true);
+            }
+            setHideLoading(true);
+          }
+        }
+        initialValues={{
+          email: ''
+        }}
+      >
+        {({
+          handleSubmit,
+          handleChange,
+          handleBlur,
+          values,
+          touched,
+          isValid,
+          errors,
+        }) => (
+          <Form noValidate onSubmit={handleSubmit}>
+            <Form.Row>
+              <Form.Group as={Col} md="6" controlId="validationFormik01">
+                <Form.Label>Email</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Email"
+                  name="email"
+                  value={values.email}
+                  onChange={handleChange}
+                  isInvalid={!!errors.email}
+                />
+                <Form.Control.Feedback type="invalid">
+                  {errors.email}
+                </Form.Control.Feedback>
+              </Form.Group>
+            </Form.Row>
+            <Button variant="outline-light" type="submit">Submit</Button>
+            <Spinner animation="border" hidden={hideLoading}/>
+            <Alert variant="danger" onClose={() => setShowFailure(false)} dismissible show={showFailure}>
+            <Alert.Heading>Oh snap! Reset failed!</Alert.Heading>
+              <p>
+                {forgotPasswordOrUsernameFailureDesc}
+              </p>
+            </Alert>
+          </Form>
+        )}
+      </Formik>
+      <ForgotUsernameOrPasswordModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
+    </Styles>
+  );
+}
+
+function ForgotUsernameOrPasswordModal(props) {
+  return (
+    <Modal
+      {...props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Forgot Username or Password
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <ForgotPasswordOrUsernameForm/>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button variant="outline-light" onClick={props.onHide}>Close</Button>
+      </Modal.Footer>
+    </Modal>
   );
 }
 
