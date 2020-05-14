@@ -108,7 +108,7 @@ function ResetPasswordForm(props) {
         }) => (
           <Form noValidate onSubmit={handleSubmit}>
             <Form.Row>
-              <Form.Group as={Col} md="6" controlId="validationFormik02">
+              <Form.Group as={Col} md="6" controlId="validationFormik01">
                 <Form.Label>Password</Form.Label>
                 <Form.Control
                   type="password"
