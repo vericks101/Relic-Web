@@ -4,8 +4,9 @@ import { Container } from 'react-bootstrap'
 import styled from '../../../node_modules/styled-components';
 
 const Styles = styled.div`
-    .container {
-
+    .resetContainer {
+      padding-top: 250px !important;
+      padding-bottom: 250px !important;
     }
 `;
 
@@ -70,8 +71,8 @@ export default class ResetPassword extends Component {
     } else {
       return (
         <Styles>
-          <Container>
-          <ResetPasswordComponent username={username}/>
+          <Container className="resetContainer">
+            <ResetPasswordComponent username={username}/>
           </Container>
         </Styles>
       )

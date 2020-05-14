@@ -15,6 +15,29 @@ const Styles = styled.div`
       position: absolute;
       margin: 8px 0px 1px 1px;
     }
+
+    .resetForm {
+      margin: 0 auto;
+      color: white !important;
+      font-family: "VCR_OSD_MONO_1.001";
+    }
+
+    .btn {
+      font-family: "VCR_OSD_MONO_1.001";
+    }
+
+    .spinner-border {
+      position: absolute;
+      margin: 8px 0px 1px 1px;
+      color: white;
+    }
+
+    @media (min-width: 600px) {
+        .alert {
+        margin-left: 100px;
+        margin-right: 100px;
+      }
+    }
 `;
 
 const submitResetPassword = async ({ username, password }) => {
@@ -54,6 +77,8 @@ const alphanumericRegex = '^[a-zA-Z0-9]+$';
 const resetPasswordSchema = yup.object({
   password: yup.string()
     .required('Password is a required field. ')
+    // eslint-disable-next-line
+    .min(8, "Must be at least ${min} characters.")
     .matches(alphanumericRegex, 'May only contain alphanumeric characters. ')
 });
 
@@ -106,10 +131,10 @@ function ResetPasswordForm(props) {
           isValid,
           errors,
         }) => (
-          <Form noValidate onSubmit={handleSubmit}>
+          <Form className="text-center" noValidate onSubmit={handleSubmit}>
             <Form.Row>
-              <Form.Group as={Col} md="6" controlId="validationFormik01">
-                <Form.Label>Password</Form.Label>
+              <Form.Group as={Col} className="resetForm" md="4" controlId="validationFormik01">
+                <Form.Label>New Password</Form.Label>
                 <Form.Control
                   type="password"
                   placeholder="Password"

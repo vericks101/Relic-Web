@@ -70,6 +70,8 @@ const schema = yup.object({
     .email('Email must be valid.'),
   password: yup.string()
     .required('Password is a required field. ')
+    // eslint-disable-next-line
+    .min(8, "Must be at least ${min} characters.")
     .matches(alphanumericRegex, 'May only contain alphanumeric characters. ')
     .oneOf([yup.ref('confirmPassword'), null], 'Passwords must match'),
   confirmPassword: yup.string()
