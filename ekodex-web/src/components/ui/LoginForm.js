@@ -164,7 +164,7 @@ function LoginForm(props) {
 
 const submitForgotUsernameOrPassword = async ({ email }) => {
   try {
-      return await fetch('http://localhost:3001/api/user/forgotusernameorpassword', 
+      return await fetch('http://localhost:3001/api/forgotusernameorpassword', 
       {
       method: 'POST',
       headers: {
@@ -204,6 +204,7 @@ function ForgotPasswordOrUsernameForm(props) {
   const defaultforgotPasswordOrUsernameError = 'Sorry, it looks like something went wrong when attempting to send a reset email. Please try again after some time.';
 
   const [showFailure, setShowFailure] = React.useState(false);
+  const [showSuccess, setShowSuccess] = React.useState(false);
   const [hideLoading, setHideLoading] = React.useState(true);
   const [forgotPasswordOrUsernameFailureDesc, setforgotPasswordOrUsernameFailureDesc] = React.useState(defaultforgotPasswordOrUsernameError);
   const [modalShow, setModalShow] = React.useState(false);
@@ -218,13 +219,16 @@ function ForgotPasswordOrUsernameForm(props) {
             let forgotUsernameOrPasswordResponse = await submitForgotUsernameOrPassword(values);
             setforgotPasswordOrUsernameFailureDesc(defaultforgotPasswordOrUsernameError);
             setShowFailure(false);
+            setShowSuccess(false);
 
             if (forgotUsernameOrPasswordResponse !== null) {
                 if (forgotUsernameOrPasswordResponse.status === 200) {
+                  setShowSuccess(true);
                     setShowFailure(false);
                 } else {
                   setforgotPasswordOrUsernameFailureDesc(forgotUsernameOrPasswordResponse.data.error);
                     setShowFailure(true);
+                    setShowSuccess(false);
                 }
             } else {
                 setShowFailure(true);
@@ -264,8 +268,14 @@ function ForgotPasswordOrUsernameForm(props) {
             </Form.Row>
             <Button variant="outline-light" type="submit">Submit</Button>
             <Spinner animation="border" hidden={hideLoading}/>
+            <Alert variant="success" onClose={() => setShowSuccess(false)} dismissible show={showSuccess}>
+            <Alert.Heading>Success! Reset email sent!</Alert.Heading>
+              <p>
+                An email has been sent to your inbox with your username and or instructions on how to reset your password.
+              </p>
+            </Alert>
             <Alert variant="danger" onClose={() => setShowFailure(false)} dismissible show={showFailure}>
-            <Alert.Heading>Oh snap! Reset failed!</Alert.Heading>
+            <Alert.Heading>Oh snap! Reset email failed to send!</Alert.Heading>
               <p>
                 {forgotPasswordOrUsernameFailureDesc}
               </p>
