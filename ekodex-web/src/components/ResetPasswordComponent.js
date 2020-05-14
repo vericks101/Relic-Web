@@ -31,13 +31,6 @@ const Styles = styled.div`
       margin: 8px 0px 1px 1px;
       color: white;
     }
-
-    @media (min-width: 600px) {
-        .alert {
-        margin-left: 100px;
-        margin-right: 100px;
-      }
-    }
 `;
 
 const submitResetPassword = async ({ username, password }) => {

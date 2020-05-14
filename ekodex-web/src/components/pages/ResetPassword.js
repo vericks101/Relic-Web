@@ -1,12 +1,25 @@
 import React, { Component } from 'react';
 import ResetPasswordComponent from '../ResetPasswordComponent';
-import { Container } from 'react-bootstrap'
+import { Container, Alert, Spinner } from 'react-bootstrap'
 import styled from '../../../node_modules/styled-components';
 
 const Styles = styled.div`
     .resetContainer {
-      padding-top: 250px !important;
-      padding-bottom: 250px !important;
+      padding-top: 350px !important;
+      padding-bottom: 350px !important;
+    }
+
+    .loadingContainer {
+      padding-top: 350px !important;
+      padding-bottom: 350px !important;
+      text-align: center;
+    }
+
+    @media (min-width: 600px) {
+      .alert {
+        margin-left: 100px;
+        margin-right: 100px;
+      }
     }
 `;
 
@@ -58,15 +71,25 @@ export default class ResetPassword extends Component {
 
     if (error) {
       return (
-        <div>
-          <h4>Problem resetting password. Please send another reset link.</h4>
-        </div>
+        <Styles>
+          <Container className="resetContainer">
+          <Alert variant="danger" className="text-center">
+            <Alert.Heading>Failed to load Password Reset Page.</Alert.Heading>
+              <p>
+                There was an issue loading the password reset page or the reset link has expired. Please try to send
+                another password reset link or reload the page after some time.
+              </p>
+            </Alert>
+          </Container>
+        </Styles>
       )
     } else if (isLoading) {
       return (
-        <div>
-          <h4>Loading user data...</h4>
-        </div>
+        <Styles>
+          <Container className="loadingContainer">
+            <Spinner animation="border" className="text-center"/>
+          </Container>
+        </Styles>
       )
     } else {
       return (
