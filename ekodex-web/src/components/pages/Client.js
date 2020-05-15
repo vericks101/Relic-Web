@@ -33,7 +33,8 @@ export const Client = () => (
                         A single Platform for all <b>EKODEX</b> Games. Effortlessly install, stay updated automatically, synchronize 
                         <p>progress, and play without needing to open the browser.</p>
                         <p></p>
-                        <Button variant="outline-light" href="/client">Download for Windows</Button>
+                        <Button variant="outline-light" href="/client" disabled>Download for Windows</Button>
+                        <p>Will be available soon. Still under development.</p>
                     </p>
                 </Jumbotron>
                 <Jumbotron fluid className="bodyJumbotron">
