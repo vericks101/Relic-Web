@@ -35,7 +35,7 @@ const Styles = styled.div`
 
 const submitResetPassword = async ({ username, password }) => {
     try {
-        return await fetch('http://localhost:3001/api/resetPasswordViaUsername', 
+        return await fetch('https://ekodex-server.herokuapp.com/api/resetPasswordViaUsername', 
         {
         method: 'POST',
         headers: {

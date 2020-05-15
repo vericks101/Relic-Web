@@ -22,7 +22,7 @@ const Styles = styled.div`
 
 const submitSignUp = async ({ firstName, lastName, username, email, password }) => {
     try {
-      return await fetch('http://localhost:3001/api/user/register', {
+      return await fetch('https://ekodex-server.herokuapp.com/api/user/register', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',

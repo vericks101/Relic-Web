@@ -34,7 +34,7 @@ export default class VerifyEmail extends Component {
   }
 
   async componentDidMount() {
-    await fetch('http://localhost:3001/api/verify', {
+    await fetch('https://ekodex-server.herokuapp.com/api/verify', {
       method: 'POST',
       headers: {
           'Accept': 'application/json',

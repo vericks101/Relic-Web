@@ -19,7 +19,7 @@ const Styles = styled.div`
 
 const submitLogin = async ({ username, password }) => {
     try {
-        return await fetch('http://localhost:3001/api/user/login', 
+        return await fetch('https://ekodex-server.herokuapp.com/api/user/login', 
         {
         method: 'POST',
         headers: {
@@ -170,7 +170,7 @@ function LoginForm(props) {
 
 const submitForgotUsernameOrPassword = async ({ email }) => {
   try {
-      return await fetch('http://localhost:3001/api/forgotusernameorpassword', 
+      return await fetch('https://ekodex-server.herokuapp.com/api/forgotusernameorpassword', 
       {
       method: 'POST',
       headers: {

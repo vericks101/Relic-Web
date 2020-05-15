@@ -1,7 +1,7 @@
 import { LOGIN_USER, LOGOUT_USER } from './types';
 
 export const loginUser = (postData) => dispatch => {
-    fetch('http://localhost:3001/api/user/login', {
+    fetch('https://ekodex-server.herokuapp.com/api/user/login', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'

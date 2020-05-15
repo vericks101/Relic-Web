@@ -35,7 +35,7 @@ export default class ResetPassword extends Component {
   }
 
   async componentDidMount() {
-    await fetch('http://localhost:3001/api/reset', {
+    await fetch('https://ekodex-server.herokuapp.com/api/reset', {
       method: 'POST',
       headers: {
           'Accept': 'application/json',
