@@ -66,6 +66,7 @@ const loginSchema = yup.object({
 
 function LoginForm(props) {
   const defaultLoginError = 'Sorry, it looks like something went wrong when attempting to login to your account. Please try to login again after some time.';
+  const verifiedLoginError = 'Sorry, you must verify your email before you can login to the account you\'ve created. Please check your inbox for a verification email.';
 
   const [showFailure, setShowFailure] = React.useState(false);
   const [hideLoading, setHideLoading] = React.useState(true);
@@ -84,11 +85,16 @@ function LoginForm(props) {
             setShowFailure(false);
 
             if (loginResponse !== null) {
-                if (loginResponse.status === 200) {
+                if (loginResponse.status === 200 && loginResponse.data.verified) {
                     props.updateLoginState({username: values.username, password: values.password});
                     setShowFailure(false);
                 } else {
-                    setLoginFailureDesc(loginResponse.data.error);
+                  console.log(loginResponse.data);
+                    if (loginResponse.status === 200 && !loginResponse.data.verified) {
+                      setLoginFailureDesc(verifiedLoginError);
+                    } else {
+                      setLoginFailureDesc(loginResponse.data.error);
+                    }
                     setShowFailure(true);
                 }
             } else {

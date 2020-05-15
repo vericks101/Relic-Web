@@ -235,8 +235,8 @@ function SignUpForm() {
             <Alert variant="success" onClose={() => setShowSuccess(false)} dismissible show={showSuccess}>
             <Alert.Heading>Success! You are registered!</Alert.Heading>
               <p>
-                Your account has been successfully registered. You can now login to your account. 
-                Please proceed to the login screen to do so.
+                Your account has been successfully registered. Before logging in, please check your email inbox and
+                verify your email. You won't be able to login until you complete this step.
               </p>
             </Alert>
             <Alert variant="danger" onClose={() => setShowFailure(false)} dismissible show={showFailure}>

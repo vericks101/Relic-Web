@@ -5,6 +5,7 @@ import { Home } from './components/pages/Home';
 import { Unbound } from './components/pages/Unbound';
 import { Client } from './components/pages/Client';
 import ResetPassword from './components/pages/ResetPassword';
+import VerifyEmail from './components/pages/VerifyEmail';
 import { NoMatch } from './components/pages/NoMatch';
 import { Layout } from './components/Layout';
 import JumbotronFooter from './components/ui/JumbotronFooter';
@@ -29,6 +30,7 @@ class App extends Component {
                 <Route exact path='/unbound' component={Unbound} />
                 <Route exact path='/client' component={Client} />
                 <Route exact path="/reset/:token" component={ResetPassword} />
+                <Route exact path="/verify/:token" component={VerifyEmail} />
                 <Route component={NoMatch} />
               </Switch>
             </Router>
