@@ -59,7 +59,7 @@ const JumbotronFooter = () => {
                                 className="bottomNavLogo"
                             />
                         </a>
-                        <a href="/" target="_blank" rel="noopener noreferrer">
+                        <a href="https://twitter.com/EkodexOfficial" target="_blank" rel="noopener noreferrer">
                             <img
                                 alt=""
                                 src={require("../../assets/twitterlogo.png")}
@@ -68,7 +68,7 @@ const JumbotronFooter = () => {
                                 className="socialMediaLogo"
                             />
                         </a>
-                        <a href="/" target="_blank" rel="noopener noreferrer">
+                        {/* <a href="/" target="_blank" rel="noopener noreferrer">
                             <img
                                 alt=""
                                 src={require("../../assets/facebooklogo.png")}
@@ -76,7 +76,7 @@ const JumbotronFooter = () => {
                                 height="30"
                                 className="socialMediaLogo"
                             />
-                        </a>
+                        </a> */}
                         </div>
                     </Container>
                 </Jumbotron>
