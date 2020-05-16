@@ -6,6 +6,7 @@ const Styles = styled.div`
     .verifyContainer {
       padding-top: 350px !important;
       padding-bottom: 350px !important;
+      font-family: "VCR_OSD_MONO_1.001" !important
     }
 
     .loadingContainer {
@@ -19,6 +20,10 @@ const Styles = styled.div`
         margin-left: 100px;
         margin-right: 100px;
       }
+    }
+
+    .alert {
+      font-family: "VCR_OSD_MONO_1.001" !important
     }
 `;
 

@@ -19,7 +19,12 @@ const Styles = styled.div`
       .alert {
         margin-left: 100px;
         margin-right: 100px;
+        font-family: "VCR_OSD_MONO_1.001";
       }
+    }
+
+    .alert {
+      font-family: "VCR_OSD_MONO_1.001";
     }
 `;
 
