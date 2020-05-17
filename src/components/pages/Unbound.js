@@ -145,7 +145,8 @@ export const Unbound = () => (
                       </>
                     </Card.Subtitle>
                     <>
-                      <Button variant="outline-light" href="/client">Download via Client</Button>{' '}
+                      <Button variant="outline-light" href="https://gamejolt.com/games/Unbound/307238" target="_blank" rel="noopener noreferrer">Download via Game Jolt</Button>{' '}
+                      <Button variant="outline-light" href="https://ekodex.itch.io/unbound" target="_blank" rel="noopener noreferrer">Download via itch.io</Button>{' '}
                     </>
                   </Card.Body>
                 </Card>
