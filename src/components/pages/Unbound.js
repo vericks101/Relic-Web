@@ -115,6 +115,18 @@ const Styles = styled.div`
     }
 `;
 
+const AchievementsStyles = styled.div`
+  .jumbotron {
+    text-align: center;
+    margin-bottom: 0px;
+    padding: 300px;
+    background-color: #1b1b1b;
+    color: white;
+    font-family: "VCR_OSD_MONO_1.001"
+  }
+`;
+
+
 export const Unbound = () => (
     <Styles>
         <UnboundJumbotronHeader/>
@@ -184,13 +196,16 @@ export const Unbound = () => (
                 </Card>
               </Jumbotron>
             </Tab>
-            <Tab eventKey="Achievements" title="Achievements" disabled>
+            <Tab eventKey="achievements" title="Achievements">
+              <AchievementsStyles>
+                <div>
+                  <Jumbotron fluid>
+                      <h1>Achievements Not Supported</h1>
+                      <p>This game does not currently support achievements...</p>
+                  </Jumbotron>
+                </div>
+              </AchievementsStyles>
             </Tab>
-            {/* <Tab eventKey="something else" title="Something Else">
-              <Jumbotron fluid>
-
-              </Jumbotron>
-            </Tab> */}
           </Tabs>
         </Container>
     </Styles>
