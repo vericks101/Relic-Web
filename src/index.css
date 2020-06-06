@@ -41,6 +41,10 @@ code {
   font-stretch: expanded;
 }
 
+.navbar-toggler-icon {
+  background-image: url(./assets/mobile-menu.png) !important;
+}
+
 .card {
   background-color: #191919 !important;
   color: white !important;
