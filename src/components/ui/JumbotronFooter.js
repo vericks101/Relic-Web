@@ -1,6 +1,6 @@
 import React from '../../../node_modules/react';
 import Jumbotron from '../../../node_modules/react-bootstrap/Jumbotron';
-import { Container, Button } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import styled from '../../../node_modules/styled-components';
 
 const Styles = styled.div`
@@ -38,7 +38,7 @@ const JumbotronFooter = () => {
             <div>
                 <Jumbotron fluid>
                     <Container>
-                        <h2>
+                        {/* <h2>
                             <img
                                 alt=""
                                 src={require("../../assets/ekodexlogo.png")}
@@ -47,7 +47,7 @@ const JumbotronFooter = () => {
                                 className="navLogo"
                             />
                             <b>EKODEX</b> Client<Button variant="outline-light" href="/client">Download Now</Button>
-                        </h2>
+                        </h2> */}
                         <hr className="footerDivider"/>
                         <div className="logos">
                         <a href="/">
