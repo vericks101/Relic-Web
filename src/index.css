@@ -45,6 +45,10 @@ code {
   background-image: url(./assets/mobile-menu.png) !important;
 }
 
+.nav-link.disabled {
+  color: gray !important;
+}
+
 .card {
   background-color: #191919 !important;
   color: white !important;

@@ -184,12 +184,9 @@ export const Unbound = () => (
                 </Card>
               </Jumbotron>
             </Tab>
-            {/* <Tab eventKey="something" title="Something">
-              <Jumbotron fluid>
-
-              </Jumbotron>
+            <Tab eventKey="Achievements" title="Achievements" disabled>
             </Tab>
-            <Tab eventKey="something else" title="Something Else">
+            {/* <Tab eventKey="something else" title="Something Else">
               <Jumbotron fluid>
 
               </Jumbotron>
