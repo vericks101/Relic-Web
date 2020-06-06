@@ -116,13 +116,26 @@ const Styles = styled.div`
 `;
 
 const AchievementsStyles = styled.div`
-  .jumbotron {
-    text-align: center;
-    margin-bottom: 0px;
-    padding: 300px;
-    background-color: #1b1b1b;
-    color: white;
-    font-family: "VCR_OSD_MONO_1.001"
+  @media screen and (min-width: 900px) {
+    .jumbotron {
+      text-align: center;
+      margin-bottom: 0px;
+      padding: 300px;
+      background-color: #1b1b1b;
+      color: white;
+      font-family: "VCR_OSD_MONO_1.001"
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    .jumbotron {
+      text-align: center;
+      margin-bottom: 0px;
+      /* padding: 300px; */
+      background-color: #1b1b1b;
+      color: white;
+      font-family: "VCR_OSD_MONO_1.001"
+    }
   }
 `;
 
