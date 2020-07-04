@@ -14,6 +14,7 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 
+// Redux store creation. Dev tools are disabled for production compatibility.
 const store = createStore(
     persistedReducer, 
     intialState,
