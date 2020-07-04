@@ -13,6 +13,7 @@ const Styles = styled.div`
     }
 `;
 
+// Jumbotron UI component for NoMatch page component.
 const NoMatchJumbotronHeader = () => {
     return(
         <Styles>

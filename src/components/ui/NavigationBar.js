@@ -3,6 +3,7 @@ import { Nav, Navbar } from 'react-bootstrap';
 import LoginComponent from '../LoginComponent';
 import '../../index.css';
 
+// UI component used for the navigation bar in App.js to be shown on all pages.
 export const NavigationBar = () => (
     <Navbar className="nav-background" collapseOnSelect expand="lg" sticky="top">
     <Navbar.Brand href="/">
@@ -14,7 +15,7 @@ export const NavigationBar = () => (
             className="navLogo"
         />
         EKODEX
-      </Navbar.Brand>
+        </Navbar.Brand>
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
     <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">

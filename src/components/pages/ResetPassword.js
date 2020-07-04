@@ -28,7 +28,9 @@ const Styles = styled.div`
     }
 `;
 
+// Password reset component containing state and UI for password reset form and logic.
 export default class ResetPassword extends Component {
+  // On object creation, construct a new component with default state as defined below.
   constructor() {
     super();
 
@@ -39,6 +41,7 @@ export default class ResetPassword extends Component {
     };
   }
 
+  // When loading page, attempt to reach out to API service with reset token provided in link to validate.
   async componentDidMount() {
     await fetch('https://ekodex-server.herokuapp.com/api/reset', {
       method: 'POST',
@@ -71,6 +74,7 @@ export default class ResetPassword extends Component {
       }))
   }
 
+  // Component UI shown below. The UI that is shown depends on the state of loading and validating with API service.
   render() {
     const { error, isLoading, username } = this.state;
 

@@ -1,5 +1,6 @@
 import { LOGIN_USER, LOGOUT_USER } from './types';
 
+// Fetch user attempting to login and dispatch data returned.
 export const loginUser = (postData) => dispatch => {
     fetch('https://ekodex-server.herokuapp.com/api/user/login', {
         method: 'POST',
@@ -15,6 +16,7 @@ export const loginUser = (postData) => dispatch => {
     }));
 };
 
+// Dispatch logout action if user attempts to do so.
 export const logoutUser = () => dispatch => {
     dispatch({
         type: LOGOUT_USER

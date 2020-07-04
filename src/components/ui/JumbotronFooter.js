@@ -32,51 +32,33 @@ const Styles = styled.div`
     }
 `;
 
+// Page footer to be utilized in all pages through the website.
 const JumbotronFooter = () => {
     return(
         <Styles>
             <div>
                 <Jumbotron fluid>
                     <Container>
-                        {/* <h2>
-                            <img
-                                alt=""
-                                src={require("../../assets/ekodexlogo.png")}
-                                width="60"
-                                height="60"
-                                className="navLogo"
-                            />
-                            <b>EKODEX</b> Client<Button variant="outline-light" href="/client">Download Now</Button>
-                        </h2> */}
                         <hr className="footerDivider"/>
                         <div className="logos">
-                        <a href="/">
-                            <img
-                                alt=""
-                                src={require("../../assets/ekodexlogo.png")}
-                                width="150"
-                                height="150"
-                                className="bottomNavLogo"
-                            />
-                        </a>
-                        <a href="https://twitter.com/EkodexOfficial" target="_blank" rel="noopener noreferrer">
-                            <img
-                                alt=""
-                                src={require("../../assets/twitterlogo.png")}
-                                width="30"
-                                height="30"
-                                className="socialMediaLogo"
-                            />
-                        </a>
-                        {/* <a href="/" target="_blank" rel="noopener noreferrer">
-                            <img
-                                alt=""
-                                src={require("../../assets/facebooklogo.png")}
-                                width="30"
-                                height="30"
-                                className="socialMediaLogo"
-                            />
-                        </a> */}
+                            <a href="/">
+                                <img
+                                    alt=""
+                                    src={require("../../assets/ekodexlogo.png")}
+                                    width="150"
+                                    height="150"
+                                    className="bottomNavLogo"
+                                />
+                            </a>
+                            <a href="https://twitter.com/EkodexOfficial" target="_blank" rel="noopener noreferrer">
+                                <img
+                                    alt=""
+                                    src={require("../../assets/twitterlogo.png")}
+                                    width="30"
+                                    height="30"
+                                    className="socialMediaLogo"
+                                />
+                            </a>
                         </div>
                     </Container>
                 </Jumbotron>

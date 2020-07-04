@@ -27,7 +27,9 @@ const Styles = styled.div`
     }
 `;
 
+// Page component for email verification page.
 export default class VerifyEmail extends Component {
+  // On object creation, construct with default below state values.
   constructor() {
     super();
 
@@ -38,6 +40,7 @@ export default class VerifyEmail extends Component {
     };
   }
 
+  // On component creation, verify with API service that token provided in email link is valid.
   async componentDidMount() {
     await fetch('https://ekodex-server.herokuapp.com/api/verify', {
       method: 'POST',
@@ -70,6 +73,7 @@ export default class VerifyEmail extends Component {
       }))
   }
 
+  // UI for component that is dictated by state of loading.
   render() {
     const { error, isLoading } = this.state;
 

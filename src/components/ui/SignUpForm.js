@@ -20,6 +20,7 @@ const Styles = styled.div`
     }
 `;
 
+// Used to submit a sign up request to the API service and returns success status.
 const submitSignUp = async ({ firstName, lastName, username, email, password }) => {
     try {
       return await fetch('https://ekodex-server.herokuapp.com/api/user/register', {
@@ -79,6 +80,7 @@ const schema = yup.object({
     .matches(alphanumericRegex, 'May only contain alphanumeric characters. ')
 });
 
+// Form portion of UI. Comes with form validation.
 function SignUpForm() {
   const defaultSignUpError = 'Sorry, it looks like something went wrong when attempting to register to your account. Please try to register again after some time.';
 
@@ -127,10 +129,7 @@ function SignUpForm() {
         {({
           handleSubmit,
           handleChange,
-          handleBlur,
           values,
-          touched,
-          isValid,
           errors,
         }) => (
           <Form noValidate onSubmit={handleSubmit}>

@@ -17,6 +17,7 @@ const Styles = styled.div`
     }
 `;
 
+// Used to submit a login request to the API service and get back login results.
 const submitLogin = async ({ username, password }) => {
     try {
         return await fetch('https://ekodex-server.herokuapp.com/api/user/login', 
@@ -64,6 +65,7 @@ const loginSchema = yup.object({
     .matches(alphanumericRegex, 'May only contain alphanumeric characters. ')
 });
 
+// UI portion of login. Comes with form validation.
 function LoginForm(props) {
   const defaultLoginError = 'Sorry, it looks like something went wrong when attempting to login to your account. Please try to login again after some time.';
   const verifiedLoginError = 'Sorry, you must verify your email before you can login to the account you\'ve created. Please check your inbox for a verification email.';
@@ -111,10 +113,7 @@ function LoginForm(props) {
         {({
           handleSubmit,
           handleChange,
-          handleBlur,
           values,
-          touched,
-          isValid,
           errors,
         }) => (
           <Form noValidate onSubmit={handleSubmit}>
@@ -168,6 +167,7 @@ function LoginForm(props) {
   );
 }
 
+// Used to send a forgot password or username request to API service and returns back success status.
 const submitForgotUsernameOrPassword = async ({ email }) => {
   try {
       return await fetch('https://ekodex-server.herokuapp.com/api/forgotusernameorpassword', 
@@ -206,6 +206,7 @@ const forgotUsernameOrPasswordSchema = yup.object({
     .email('Email must be valid.')
 });
 
+// UI portion of forgot password or username. Comes with form validation.
 function ForgotPasswordOrUsernameForm(props) {
   const defaultforgotPasswordOrUsernameError = 'Sorry, it looks like something went wrong when attempting to send a reset email. Please try again after some time.';
 
@@ -249,10 +250,7 @@ function ForgotPasswordOrUsernameForm(props) {
         {({
           handleSubmit,
           handleChange,
-          handleBlur,
           values,
-          touched,
-          isValid,
           errors,
         }) => (
           <Form noValidate onSubmit={handleSubmit}>
@@ -297,6 +295,7 @@ function ForgotPasswordOrUsernameForm(props) {
   );
 }
 
+// Modal for forgot username or password portion of UI.
 function ForgotUsernameOrPasswordModal(props) {
   return (
     <Modal

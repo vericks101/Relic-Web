@@ -17,6 +17,7 @@ const Styles = styled.div`
     }
 `;
 
+// Jumbotron header for Unbound page. Contains the Unbound banner.
 const UnboundJumbotronHeader = () => {
     return(
         <Styles>
