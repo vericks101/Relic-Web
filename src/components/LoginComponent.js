@@ -22,7 +22,7 @@ class LoginComponent extends Component {
                 {this.props.isLoggedIn ? 
                     <Nav>
                         <NavDropdown title="My Account" id="nav-dropdown">
-                            <NavDropdown.Item className="foobar" onClick={this.updateToLoggedOutState}>Logout</NavDropdown.Item>
+                            <NavDropdown.Item onClick={this.updateToLoggedOutState}>Logout</NavDropdown.Item>
                         </NavDropdown>
                     </Nav> : 
                     <Nav activeKey="/do">
