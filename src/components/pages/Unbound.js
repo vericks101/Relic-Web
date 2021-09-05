@@ -161,7 +161,7 @@ export const Unbound = () => (
                       </>
                     </Card.Subtitle>
                     <>
-                      <Button variant="outline-light" href="https://github.com/vericks101/Ekodex-Client/releases/download/v1.0.0/ekodex-client-Setup-1.0.0.exe" target="_blank" rel="noopener noreferrer">Download via Client</Button>{' '}
+                      <Button variant="outline-light" href="https://github.com/vericks101/Ekodex-Client/releases/download/v1.0.1/ekodex-client-Setup-1.0.1.exe" target="_blank" rel="noopener noreferrer">Download via Client</Button>{' '}
                     </>
                   </Card.Body>
                 </Card>
