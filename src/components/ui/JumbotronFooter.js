@@ -23,7 +23,6 @@ const Styles = styled.div`
     }
 
     .socialMediaLogo {
-        margin-top: 22px;
         margin-left: 5px;
     }
 
@@ -41,16 +40,7 @@ const JumbotronFooter = () => {
                     <Container>
                         <hr className="footerDivider"/>
                         <div className="logos">
-                            <a href="/">
-                                <img
-                                    alt=""
-                                    src={require("../../assets/ekodexlogo.png")}
-                                    width="150"
-                                    height="150"
-                                    className="bottomNavLogo"
-                                />
-                            </a>
-                            <a href="https://twitter.com/EkodexOfficial" target="_blank" rel="noopener noreferrer">
+                            <a href="https://twitter.com/RelicOfficial" target="_blank" rel="noopener noreferrer">
                                 <img
                                     alt=""
                                     src={require("../../assets/twitterlogo.png")}

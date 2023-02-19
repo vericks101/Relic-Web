@@ -42,7 +42,7 @@ export default class VerifyEmail extends Component {
 
   // On component creation, verify with API service that token provided in email link is valid.
   async componentDidMount() {
-    await fetch('https://ekodex-server.herokuapp.com/api/verify', {
+    await fetch('https://Relic-server.herokuapp.com/api/verify', {
       method: 'POST',
       headers: {
           'Accept': 'application/json',

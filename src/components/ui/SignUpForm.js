@@ -23,7 +23,7 @@ const Styles = styled.div`
 // Used to submit a sign up request to the API service and returns success status.
 const submitSignUp = async ({ firstName, lastName, username, email, password }) => {
     try {
-      return await fetch('https://ekodex-server.herokuapp.com/api/user/register', {
+      return await fetch('https://Relic-server.herokuapp.com/api/user/register', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',

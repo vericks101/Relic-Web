@@ -5,8 +5,8 @@ import ImageGallery from 'react-image-gallery';
 
 const images = [
   {
-    original: require('../../assets/ekodex-client.png'),
-    thumbnail: require('../../assets/ekodex-client.png')
+    original: require('../../assets/Relic-client.png'),
+    thumbnail: require('../../assets/Relic-client.png')
   },
 ]
 
@@ -80,7 +80,7 @@ export const Client = () => (
               <Jumbotron fluid className="OverviewJumbotron">
                 <Card className="box1">
                   <Card.Body>
-                    <Card.Title>Ekodex Client</Card.Title>
+                    <Card.Title>Relic Client</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">
                       <>
                         <OverlayTrigger
@@ -101,15 +101,15 @@ export const Client = () => (
                       </>
                     </Card.Subtitle>
                     <>
-                      <Button variant="outline-light" href="https://github.com/vericks101/Ekodex-Client/releases/download/v1.0.1/ekodex-client-Setup-1.0.1.exe" target="_blank" rel="noopener noreferrer">Download Client</Button>{' '}
+                      <Button variant="outline-light" href="https://github.com/vericks101/Relic-Client/releases/download/v1.0.1/Relic-client-Setup-1.0.1.exe" target="_blank" rel="noopener noreferrer">Download Client</Button>{' '}
                     </>
                   </Card.Body>
                 </Card>
                 <Card className="box2">
                   <Card.Body>
                     <Card.Text>
-                      The Ekodex Client is a desktop application that can be used
-                      download and play games hosted through the Ekodex Platform.
+                      The Relic Client is a desktop application that can be used
+                      download and play games hosted through the Relic Platform.
                       The client supports all features of the platform website so
                       once downloaded, account creation and login can be accessed.
                       Alongside the above, auto update functionality for both the

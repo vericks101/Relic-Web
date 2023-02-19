@@ -2,7 +2,7 @@ import { LOGIN_USER, LOGOUT_USER } from './types';
 
 // Fetch user attempting to login and dispatch data returned.
 export const loginUser = (postData) => dispatch => {
-    fetch('https://ekodex-server.herokuapp.com/api/user/login', {
+    fetch('https://Relic-server.herokuapp.com/api/user/login', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'

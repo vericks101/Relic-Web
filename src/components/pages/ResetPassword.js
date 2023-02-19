@@ -43,7 +43,7 @@ export default class ResetPassword extends Component {
 
   // When loading page, attempt to reach out to API service with reset token provided in link to validate.
   async componentDidMount() {
-    await fetch('https://ekodex-server.herokuapp.com/api/reset', {
+    await fetch('https://Relic-server.herokuapp.com/api/reset', {
       method: 'POST',
       headers: {
           'Accept': 'application/json',

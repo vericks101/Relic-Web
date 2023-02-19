@@ -20,7 +20,7 @@ const Styles = styled.div`
 // Used to submit a login request to the API service and get back login results.
 const submitLogin = async ({ username, password }) => {
     try {
-        return await fetch('https://ekodex-server.herokuapp.com/api/user/login', 
+        return await fetch('https://Relic-server.herokuapp.com/api/user/login', 
         {
         method: 'POST',
         headers: {
@@ -170,7 +170,7 @@ function LoginForm(props) {
 // Used to send a forgot password or username request to API service and returns back success status.
 const submitForgotUsernameOrPassword = async ({ email }) => {
   try {
-      return await fetch('https://ekodex-server.herokuapp.com/api/forgotusernameorpassword', 
+      return await fetch('https://Relic-server.herokuapp.com/api/forgotusernameorpassword', 
       {
       method: 'POST',
       headers: {

@@ -9,12 +9,12 @@ export const NavigationBar = () => (
     <Navbar.Brand href="/">
         <img
             alt=""
-            src={require("../../assets/ekodexlogo.png")}
+            src={require("../../assets/Reliclogo.png")}
             width="60"
             height="60"
             className="navLogo"
         />
-        EKODEX
+        RELIC
         </Navbar.Brand>
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
     <Navbar.Collapse id="responsive-navbar-nav">
