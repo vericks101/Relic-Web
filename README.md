@@ -1,7 +1,7 @@
 # Relic-Web
 A repository to represent the website front on Relic, a single platform for game projects that I've created and are applicable to a single gaming platform model.
 
-Check out the live hosted application here: https://relic.netlify.app/
+Check out the live hosted application here: https://relic-platform.netlify.app/
 
 Check out the back-end server repository here: https://github.com/vericks101/Relic-RESTAPI
 
